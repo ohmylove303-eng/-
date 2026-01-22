@@ -1,8 +1,8 @@
 {
-  "updated": "2026-01-21T22:17:22.363258",
+  "updated": "2026-01-22T22:15:13.467385",
   "events": [
     {
-      "date": "2026-01-21",
+      "date": "2026-01-22",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
@@ -14,15 +14,15 @@
       "date": "2026-02-06"
     },
     {
-      "event": "FOMC Meeting",
-      "impact": "High",
-      "description": "Fed interest rate decision",
-      "date": "2026-02-11"
-    },
-    {
       "event": "CPI Release",
       "impact": "High",
       "description": "Consumer Price Index - inflation indicator",
+      "date": "2026-02-12"
+    },
+    {
+      "event": "FOMC Meeting",
+      "impact": "High",
+      "description": "Fed interest rate decision",
       "date": "2026-02-12"
     },
     {
