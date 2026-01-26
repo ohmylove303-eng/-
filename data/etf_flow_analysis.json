@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-25T22:20:10.219161",
+  "timestamp": "2026-01-26T22:21:43.173423",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -8,20 +8,23 @@
       "XLP",
       "XLI",
       "XLB",
-      "XLRE",
+      "XLU",
       "SOXX",
       "SMH",
       "GLD",
       "SLV",
       "USO",
-      "HYG",
+      "TLT",
       "LQD"
     ],
     "inflow": [
+      "SPY",
+      "QQQ",
       "DIA",
       "XLK",
       "XLY",
-      "XLU"
+      "XLRE",
+      "HYG"
     ],
     "outflow": [
       "XLF",
@@ -36,31 +39,31 @@
       "ticker": "GLD",
       "name": "Gold ETF",
       "flow_score": 90,
-      "price_change_20d": 10.72
-    },
-    {
-      "ticker": "IWM",
-      "name": "Russell 2000 ETF",
-      "flow_score": 85,
-      "price_change_20d": 5.05
+      "price_change_20d": 12.81
     },
     {
       "ticker": "XLB",
       "name": "Materials Select",
       "flow_score": 85,
-      "price_change_20d": 9.22
+      "price_change_20d": 9.14
     },
     {
-      "ticker": "XLI",
-      "name": "Industrial Select",
+      "ticker": "SLV",
+      "name": "Silver ETF",
+      "flow_score": 85,
+      "price_change_20d": 50.78
+    },
+    {
+      "ticker": "IWM",
+      "name": "Russell 2000 ETF",
       "flow_score": 80,
-      "price_change_20d": 4.61
+      "price_change_20d": 4.46
     },
     {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 10.54
+      "price_change_20d": 10.93
     }
   ],
   "top_outflows": [
@@ -68,31 +71,31 @@
       "ticker": "XLF",
       "name": "Financial Select",
       "flow_score": 30,
-      "price_change_20d": -4.26
+      "price_change_20d": -4.16
     },
     {
       "ticker": "XLV",
       "name": "Healthcare Select",
       "flow_score": 40,
-      "price_change_20d": 1.61
+      "price_change_20d": 1.48
     },
     {
       "ticker": "XLC",
       "name": "Communication Services",
       "flow_score": 40,
-      "price_change_20d": -0.37
+      "price_change_20d": -0.27
     },
     {
       "ticker": "ARKK",
       "name": "ARK Innovation",
       "flow_score": 40,
-      "price_change_20d": 0.24
+      "price_change_20d": -0.91
     },
     {
       "ticker": "SPY",
       "name": "S&P 500 ETF",
-      "flow_score": 50,
-      "price_change_20d": 0.18
+      "flow_score": 60,
+      "price_change_20d": 0.34
     }
   ],
   "ai_analysis": "API Error: 400"
