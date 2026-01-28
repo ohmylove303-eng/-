@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-01-28T09:45:58.280936",
+  "timestamp": "2026-01-28T22:26:35.414065",
   "candidates": [
     {
-      "ticker": "REGN",
-      "price": 771.25,
-      "from_52w_high": -5.05,
+      "ticker": "GOOGL",
+      "price": 336.01,
+      "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
