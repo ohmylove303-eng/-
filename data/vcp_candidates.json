@@ -1,20 +1,13 @@
 {
-  "timestamp": "2026-01-29T09:56:10.113015",
+  "timestamp": "2026-01-29T22:27:07.669855",
   "candidates": [
     {
-      "ticker": "NVDA",
-      "price": 191.52,
-      "from_52w_high": -7.49,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
       "ticker": "GOOGL",
-      "price": 336.01,
+      "price": 338.25,
       "from_52w_high": 0.0,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 1
 }
