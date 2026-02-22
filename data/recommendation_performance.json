@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-02-21T09:40:54.403102",
+  "last_updated": "2026-02-22T09:42:04.628245",
   "smart_money": {
     "total_recommendations": 60,
-    "active": 18,
-    "successful": 31,
-    "failed": 11,
-    "hit_rate": 73.8,
+    "active": 12,
+    "successful": 36,
+    "failed": 12,
+    "hit_rate": 75.0,
     "avg_return": 5.79,
     "best_pick": {
       "ticker": "FDX",
@@ -23,7 +23,7 @@
         "recommended_price": 114.12,
         "target_price": 125.53,
         "current_price": 122.13,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 7.02,
         "target_hit": false,
         "status": "active"
@@ -35,7 +35,7 @@
         "recommended_price": 308.18,
         "target_price": 339.0,
         "current_price": 388.48,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 26.06,
         "target_hit": true,
         "status": "success"
@@ -47,7 +47,7 @@
         "recommended_price": 108.83,
         "target_price": 119.71,
         "current_price": 122.26,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 12.34,
         "target_hit": true,
         "status": "success"
@@ -59,7 +59,7 @@
         "recommended_price": 103.82,
         "target_price": 114.2,
         "current_price": 94.03,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": -9.43,
         "target_hit": false,
         "status": "active"
@@ -71,7 +71,7 @@
         "recommended_price": 18.59,
         "target_price": 20.45,
         "current_price": 20.4,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 9.74,
         "target_hit": false,
         "status": "active"
@@ -83,7 +83,7 @@
         "recommended_price": 148.74,
         "target_price": 163.61,
         "current_price": 150.64,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 1.28,
         "target_hit": false,
         "status": "active"
@@ -95,7 +95,7 @@
         "recommended_price": 56.08,
         "target_price": 61.69,
         "current_price": 66.53,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 18.63,
         "target_hit": true,
         "status": "success"
@@ -107,7 +107,7 @@
         "recommended_price": 94.23,
         "target_price": 103.65,
         "current_price": 100.77,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 6.94,
         "target_hit": false,
         "status": "active"
@@ -119,7 +119,7 @@
         "recommended_price": 58.71,
         "target_price": 64.58,
         "current_price": 64.34,
-        "days_held": 28,
+        "days_held": 29,
         "return_pct": 9.59,
         "target_hit": false,
         "status": "active"
@@ -128,126 +128,6 @@
         "ticker": "CTSH",
         "name": "Cognizant Technology Solutions Corporation",
         "recommended_date": "2026-01-24",
-        "recommended_price": 84.74,
-        "target_price": 93.21,
-        "current_price": 65.03,
-        "days_held": 28,
-        "return_pct": -23.26,
-        "target_hit": false,
-        "status": "failed"
-      },
-      {
-        "ticker": "NEM",
-        "name": "Newmont Corporation",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 114.12,
-        "target_price": 125.53,
-        "current_price": 122.13,
-        "days_held": 29,
-        "return_pct": 7.02,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "FDX",
-        "name": "FedEx Corporation",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 308.18,
-        "target_price": 339.0,
-        "current_price": 388.48,
-        "days_held": 29,
-        "return_pct": 26.06,
-        "target_hit": true,
-        "status": "success"
-      },
-      {
-        "ticker": "MRK",
-        "name": "Merck & Co., Inc.",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 108.83,
-        "target_price": 119.71,
-        "current_price": 122.26,
-        "days_held": 29,
-        "return_pct": 12.34,
-        "target_hit": true,
-        "status": "success"
-      },
-      {
-        "ticker": "SCHW",
-        "name": "The Charles Schwab Corporation",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 103.82,
-        "target_price": 114.2,
-        "current_price": 94.03,
-        "days_held": 29,
-        "return_pct": -9.43,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "HST",
-        "name": "Host Hotels & Resorts, Inc.",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 18.59,
-        "target_price": 20.45,
-        "current_price": 20.4,
-        "days_held": 29,
-        "return_pct": 9.74,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "DG",
-        "name": "Dollar General Corporation",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 148.74,
-        "target_price": 163.61,
-        "current_price": 150.64,
-        "days_held": 29,
-        "return_pct": 1.28,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "BALL",
-        "name": "Ball Corporation",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 56.08,
-        "target_price": 61.69,
-        "current_price": 66.53,
-        "days_held": 29,
-        "return_pct": 18.63,
-        "target_hit": true,
-        "status": "success"
-      },
-      {
-        "ticker": "TXT",
-        "name": "Textron Inc.",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 94.23,
-        "target_price": 103.65,
-        "current_price": 100.77,
-        "days_held": 29,
-        "return_pct": 6.94,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "FCX",
-        "name": "Freeport-McMoRan Inc.",
-        "recommended_date": "2026-01-23",
-        "recommended_price": 58.71,
-        "target_price": 64.58,
-        "current_price": 64.34,
-        "days_held": 29,
-        "return_pct": 9.59,
-        "target_hit": false,
-        "status": "active"
-      },
-      {
-        "ticker": "CTSH",
-        "name": "Cognizant Technology Solutions Corporation",
-        "recommended_date": "2026-01-23",
         "recommended_price": 84.74,
         "target_price": 93.21,
         "current_price": 65.03,
@@ -259,7 +139,7 @@
       {
         "ticker": "NEM",
         "name": "Newmont Corporation",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 114.12,
         "target_price": 125.53,
         "current_price": 122.13,
@@ -271,7 +151,7 @@
       {
         "ticker": "FDX",
         "name": "FedEx Corporation",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 308.18,
         "target_price": 339.0,
         "current_price": 388.48,
@@ -283,7 +163,7 @@
       {
         "ticker": "MRK",
         "name": "Merck & Co., Inc.",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 108.83,
         "target_price": 119.71,
         "current_price": 122.26,
@@ -295,7 +175,7 @@
       {
         "ticker": "SCHW",
         "name": "The Charles Schwab Corporation",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 103.82,
         "target_price": 114.2,
         "current_price": 94.03,
@@ -307,7 +187,7 @@
       {
         "ticker": "HST",
         "name": "Host Hotels & Resorts, Inc.",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 18.59,
         "target_price": 20.45,
         "current_price": 20.4,
@@ -319,7 +199,7 @@
       {
         "ticker": "DG",
         "name": "Dollar General Corporation",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 148.74,
         "target_price": 163.61,
         "current_price": 150.64,
@@ -331,7 +211,7 @@
       {
         "ticker": "BALL",
         "name": "Ball Corporation",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 56.08,
         "target_price": 61.69,
         "current_price": 66.53,
@@ -343,7 +223,7 @@
       {
         "ticker": "TXT",
         "name": "Textron Inc.",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 94.23,
         "target_price": 103.65,
         "current_price": 100.77,
@@ -355,7 +235,7 @@
       {
         "ticker": "FCX",
         "name": "Freeport-McMoRan Inc.",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 58.71,
         "target_price": 64.58,
         "current_price": 64.34,
@@ -367,7 +247,7 @@
       {
         "ticker": "CTSH",
         "name": "Cognizant Technology Solutions Corporation",
-        "recommended_date": "2026-01-22",
+        "recommended_date": "2026-01-23",
         "recommended_price": 84.74,
         "target_price": 93.21,
         "current_price": 65.03,
@@ -379,7 +259,7 @@
       {
         "ticker": "NEM",
         "name": "Newmont Corporation",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 114.12,
         "target_price": 125.53,
         "current_price": 122.13,
@@ -391,7 +271,7 @@
       {
         "ticker": "FDX",
         "name": "FedEx Corporation",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 308.18,
         "target_price": 339.0,
         "current_price": 388.48,
@@ -403,7 +283,7 @@
       {
         "ticker": "MRK",
         "name": "Merck & Co., Inc.",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 108.83,
         "target_price": 119.71,
         "current_price": 122.26,
@@ -415,7 +295,7 @@
       {
         "ticker": "SCHW",
         "name": "The Charles Schwab Corporation",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 103.82,
         "target_price": 114.2,
         "current_price": 94.03,
@@ -427,7 +307,7 @@
       {
         "ticker": "HST",
         "name": "Host Hotels & Resorts, Inc.",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 18.59,
         "target_price": 20.45,
         "current_price": 20.4,
@@ -439,7 +319,7 @@
       {
         "ticker": "DG",
         "name": "Dollar General Corporation",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 148.74,
         "target_price": 163.61,
         "current_price": 150.64,
@@ -451,7 +331,7 @@
       {
         "ticker": "BALL",
         "name": "Ball Corporation",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 56.08,
         "target_price": 61.69,
         "current_price": 66.53,
@@ -463,7 +343,7 @@
       {
         "ticker": "TXT",
         "name": "Textron Inc.",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 94.23,
         "target_price": 103.65,
         "current_price": 100.77,
@@ -475,7 +355,7 @@
       {
         "ticker": "FCX",
         "name": "Freeport-McMoRan Inc.",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 58.71,
         "target_price": 64.58,
         "current_price": 64.34,
@@ -487,7 +367,7 @@
       {
         "ticker": "CTSH",
         "name": "Cognizant Technology Solutions Corporation",
-        "recommended_date": "2026-01-21",
+        "recommended_date": "2026-01-22",
         "recommended_price": 84.74,
         "target_price": 93.21,
         "current_price": 65.03,
@@ -499,7 +379,7 @@
       {
         "ticker": "NEM",
         "name": "Newmont Corporation",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 114.12,
         "target_price": 125.53,
         "current_price": 122.13,
@@ -511,7 +391,7 @@
       {
         "ticker": "FDX",
         "name": "FedEx Corporation",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 308.18,
         "target_price": 339.0,
         "current_price": 388.48,
@@ -523,7 +403,7 @@
       {
         "ticker": "MRK",
         "name": "Merck & Co., Inc.",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 108.83,
         "target_price": 119.71,
         "current_price": 122.26,
@@ -535,7 +415,7 @@
       {
         "ticker": "SCHW",
         "name": "The Charles Schwab Corporation",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 103.82,
         "target_price": 114.2,
         "current_price": 94.03,
@@ -547,7 +427,7 @@
       {
         "ticker": "HST",
         "name": "Host Hotels & Resorts, Inc.",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 18.59,
         "target_price": 20.45,
         "current_price": 20.4,
@@ -559,7 +439,7 @@
       {
         "ticker": "DG",
         "name": "Dollar General Corporation",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 148.74,
         "target_price": 163.61,
         "current_price": 150.64,
@@ -571,7 +451,7 @@
       {
         "ticker": "BALL",
         "name": "Ball Corporation",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 56.08,
         "target_price": 61.69,
         "current_price": 66.53,
@@ -583,7 +463,7 @@
       {
         "ticker": "TXT",
         "name": "Textron Inc.",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 94.23,
         "target_price": 103.65,
         "current_price": 100.77,
@@ -595,7 +475,7 @@
       {
         "ticker": "FCX",
         "name": "Freeport-McMoRan Inc.",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 58.71,
         "target_price": 64.58,
         "current_price": 64.34,
@@ -607,11 +487,131 @@
       {
         "ticker": "CTSH",
         "name": "Cognizant Technology Solutions Corporation",
-        "recommended_date": "2026-01-20",
+        "recommended_date": "2026-01-21",
         "recommended_price": 84.74,
         "target_price": 93.21,
         "current_price": 65.03,
         "days_held": 32,
+        "return_pct": -23.26,
+        "target_hit": false,
+        "status": "failed"
+      },
+      {
+        "ticker": "NEM",
+        "name": "Newmont Corporation",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 114.12,
+        "target_price": 125.53,
+        "current_price": 122.13,
+        "days_held": 33,
+        "return_pct": 7.02,
+        "target_hit": false,
+        "status": "success"
+      },
+      {
+        "ticker": "FDX",
+        "name": "FedEx Corporation",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 308.18,
+        "target_price": 339.0,
+        "current_price": 388.48,
+        "days_held": 33,
+        "return_pct": 26.06,
+        "target_hit": true,
+        "status": "success"
+      },
+      {
+        "ticker": "MRK",
+        "name": "Merck & Co., Inc.",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 108.83,
+        "target_price": 119.71,
+        "current_price": 122.26,
+        "days_held": 33,
+        "return_pct": 12.34,
+        "target_hit": true,
+        "status": "success"
+      },
+      {
+        "ticker": "SCHW",
+        "name": "The Charles Schwab Corporation",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 103.82,
+        "target_price": 114.2,
+        "current_price": 94.03,
+        "days_held": 33,
+        "return_pct": -9.43,
+        "target_hit": false,
+        "status": "failed"
+      },
+      {
+        "ticker": "HST",
+        "name": "Host Hotels & Resorts, Inc.",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 18.59,
+        "target_price": 20.45,
+        "current_price": 20.4,
+        "days_held": 33,
+        "return_pct": 9.74,
+        "target_hit": false,
+        "status": "success"
+      },
+      {
+        "ticker": "DG",
+        "name": "Dollar General Corporation",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 148.74,
+        "target_price": 163.61,
+        "current_price": 150.64,
+        "days_held": 33,
+        "return_pct": 1.28,
+        "target_hit": false,
+        "status": "success"
+      },
+      {
+        "ticker": "BALL",
+        "name": "Ball Corporation",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 56.08,
+        "target_price": 61.69,
+        "current_price": 66.53,
+        "days_held": 33,
+        "return_pct": 18.63,
+        "target_hit": true,
+        "status": "success"
+      },
+      {
+        "ticker": "TXT",
+        "name": "Textron Inc.",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 94.23,
+        "target_price": 103.65,
+        "current_price": 100.77,
+        "days_held": 33,
+        "return_pct": 6.94,
+        "target_hit": false,
+        "status": "success"
+      },
+      {
+        "ticker": "FCX",
+        "name": "Freeport-McMoRan Inc.",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 58.71,
+        "target_price": 64.58,
+        "current_price": 64.34,
+        "days_held": 33,
+        "return_pct": 9.59,
+        "target_hit": false,
+        "status": "success"
+      },
+      {
+        "ticker": "CTSH",
+        "name": "Cognizant Technology Solutions Corporation",
+        "recommended_date": "2026-01-20",
+        "recommended_price": 84.74,
+        "target_price": 93.21,
+        "current_price": 65.03,
+        "days_held": 33,
         "return_pct": -23.26,
         "target_hit": false,
         "status": "failed"
