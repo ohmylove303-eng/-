@@ -1,20 +1,13 @@
 {
-  "timestamp": "2026-02-25T10:04:31.263238",
+  "timestamp": "2026-02-25T22:33:34.419005",
   "candidates": [
     {
       "ticker": "AAPL",
-      "price": 272.14,
-      "from_52w_high": -4.82,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "REGN",
-      "price": 772.19,
-      "from_52w_high": -4.82,
+      "price": 274.23,
+      "from_52w_high": -4.09,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 1
 }
