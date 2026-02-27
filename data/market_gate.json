@@ -1,6 +1,6 @@
 {
   "gate": "GREEN",
-  "score": 100,
+  "score": 79,
   "action": "Aggressive Long / Leverage OK",
   "reasons": [
     "[SPY] Price > MA200 (Long-term Uptrend)",
@@ -9,15 +9,13 @@
     "[SPY] Price > MA20 (Short-term Momentum)",
     "[QQQ] Price > MA200 (Long-term Uptrend)",
     "[QQQ] MA50 > MA200 (Golden Cross Alignment)",
-    "[QQQ] Price > MA50 (Mid-term Uptrend)",
-    "[QQQ] Price > MA20 (Short-term Momentum)",
-    "[VIX] VIX is Low (17.87 < 20)",
-    "[VIX] VIX is falling (Below MA20)"
+    "[VIX] VIX is Low (19.35 < 20)",
+    "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-02-26T10:01:31.774529",
+  "timestamp": "2026-02-27T09:59:13.120326",
   "indices": {
-    "SPY": 693.15,
-    "QQQ": 616.68,
-    "VIX": 17.87
+    "SPY": 689.3,
+    "QQQ": 609.24,
+    "VIX": 19.35
   }
 }
