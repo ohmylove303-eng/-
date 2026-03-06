@@ -1,6 +1,6 @@
 {
   "gate": "YELLOW",
-  "score": 56,
+  "score": 54,
   "action": "Cautious / Quality Only / No Leverage",
   "reasons": [
     "[SPY] Price > MA200 (Long-term Uptrend)",
@@ -10,10 +10,10 @@
     "[QQQ] Price > MA20 (Short-term Momentum)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-03-05T09:58:20.282745",
+  "timestamp": "2026-03-06T09:51:42.250161",
   "indices": {
-    "SPY": 685.13,
-    "QQQ": 610.75,
-    "VIX": 21.48
+    "SPY": 681.31,
+    "QQQ": 608.91,
+    "VIX": 24.48
   }
 }
