@@ -1,19 +1,18 @@
 {
   "gate": "YELLOW",
-  "score": 54,
+  "score": 50,
   "action": "Cautious / Quality Only / No Leverage",
   "reasons": [
     "[SPY] Price > MA200 (Long-term Uptrend)",
     "[SPY] MA50 > MA200 (Golden Cross Alignment)",
     "[QQQ] Price > MA200 (Long-term Uptrend)",
     "[QQQ] MA50 > MA200 (Golden Cross Alignment)",
-    "[QQQ] Price > MA20 (Short-term Momentum)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-03-06T09:51:42.250161",
+  "timestamp": "2026-03-07T09:41:15.594828",
   "indices": {
-    "SPY": 681.31,
-    "QQQ": 608.91,
-    "VIX": 24.48
+    "SPY": 672.38,
+    "QQQ": 599.75,
+    "VIX": 29.49
   }
 }
