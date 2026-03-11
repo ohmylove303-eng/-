@@ -10,10 +10,10 @@
     "[QQQ] Price > MA20 (Short-term Momentum)",
     "[VIX] VIX is rising (Above MA20)"
   ],
-  "timestamp": "2026-03-10T09:59:47.929336",
+  "timestamp": "2026-03-11T09:54:20.380107",
   "indices": {
-    "SPY": 678.27,
-    "QQQ": 607.76,
-    "VIX": 23.47
+    "SPY": 677.18,
+    "QQQ": 607.77,
+    "VIX": 25.82
   }
 }
