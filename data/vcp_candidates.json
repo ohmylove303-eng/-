@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-03-17T10:04:28.732649",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-03-17T22:31:32.953925",
+  "candidates": [
+    {
+      "ticker": "CAT",
+      "price": 702.0,
+      "from_52w_high": -9.42,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
