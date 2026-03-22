@@ -5888,5 +5888,100 @@
       }
     ],
     "saved_at": "2026-03-21T09:43:44.283969"
+  },
+  "2026-03-22": {
+    "recommendations": [
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 48.16,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "CTRA",
+        "name": "Coterra Energy Inc.",
+        "recommended_price": 33.47,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "MU",
+        "name": "Micron Technology, Inc.",
+        "recommended_price": 461.73,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 137.52,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 207.22,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "EQT",
+        "name": "EQT Corporation",
+        "recommended_price": 63.52,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 172.74,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "CF",
+        "name": "CF Industries Holdings, Inc.",
+        "recommended_price": 126.73,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "DUK",
+        "name": "Duke Energy Corporation",
+        "recommended_price": 130.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      },
+      {
+        "ticker": "AWK",
+        "name": "American Water Works Company, Inc.",
+        "recommended_price": 136.75,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-03-22"
+      }
+    ],
+    "saved_at": "2026-03-22T09:42:55.275835"
   }
 }
