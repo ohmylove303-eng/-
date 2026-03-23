@@ -1,6 +1,39 @@
 {
-  "timestamp": "2026-03-22T22:23:00.458082",
-  "indicators": {},
+  "timestamp": "2026-03-23T22:33:16.564182",
+  "indicators": {
+    "VIX": {
+      "value": 26.15,
+      "change_1d": -2.35
+    },
+    "DXY": {
+      "value": 99.15,
+      "change_1d": -0.5
+    },
+    "10Y_Yield": {
+      "value": 4.33,
+      "change_1d": -1.3
+    },
+    "GOLD": {
+      "value": 4406.7,
+      "change_1d": -3.58
+    },
+    "OIL": {
+      "value": 89.15,
+      "change_1d": -9.33
+    },
+    "BTC": {
+      "value": 70644.59,
+      "change_1d": 4.13
+    },
+    "SPY": {
+      "value": 655.38,
+      "change_1d": 1.05
+    },
+    "QQQ": {
+      "value": 588.0,
+      "change_1d": 1.02
+    }
+  },
   "analysis_ko": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable.",
   "analysis_en": "AI Analysis failed - Both Gemini and OpenAI APIs unavailable."
 }
