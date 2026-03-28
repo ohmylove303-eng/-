@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T22:31:15.969493",
+  "timestamp": "2026-03-28T22:27:51.865590",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -76,7 +76,7 @@
       "ticker": "QQQ",
       "name": "Nasdaq 100 ETF",
       "flow_score": 25,
-      "price_change_20d": -7.36
+      "price_change_20d": -7.25
     },
     {
       "ticker": "IWM",
