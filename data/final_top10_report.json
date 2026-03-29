@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T22:30:05.061806",
+  "timestamp": "2026-03-29T22:30:11.194980",
   "top_picks": [
     {
       "ticker": "CTRA",
@@ -11,9 +11,9 @@
       "change_pct": 1.45,
       "ai_summary": "",
       "sector": "Energy",
-      "avg_vol_m": 415.3,
+      "avg_vol_m": 421.4,
       "liq_score": 65,
-      "gap_velocity": 0.6,
+      "gap_velocity": 0.59,
       "target_upside": 2.0,
       "rank": 1
     },
@@ -27,9 +27,9 @@
       "change_pct": 0.62,
       "ai_summary": "",
       "sector": "Communication Services",
-      "avg_vol_m": 1294.3,
+      "avg_vol_m": 1314.9,
       "liq_score": 70,
-      "gap_velocity": 0.62,
+      "gap_velocity": 0.61,
       "target_upside": 4.7,
       "rank": 2
     },
@@ -43,9 +43,9 @@
       "change_pct": -1.22,
       "ai_summary": "",
       "sector": "Consumer Cyclical",
-      "avg_vol_m": 528.0,
+      "avg_vol_m": 547.7,
       "liq_score": 70,
-      "gap_velocity": 1.03,
+      "gap_velocity": 0.99,
       "target_upside": 8.6,
       "rank": 3
     },
@@ -59,7 +59,7 @@
       "change_pct": -1.32,
       "ai_summary": "",
       "sector": "Technology",
-      "avg_vol_m": 184.0,
+      "avg_vol_m": 191.3,
       "liq_score": 65,
       "gap_velocity": 0.92,
       "target_upside": 11.8,
@@ -75,9 +75,9 @@
       "change_pct": -1.15,
       "ai_summary": "",
       "sector": "Technology",
-      "avg_vol_m": 305.0,
+      "avg_vol_m": 310.3,
       "liq_score": 65,
-      "gap_velocity": 0.76,
+      "gap_velocity": 0.75,
       "target_upside": 12.3,
       "rank": 5
     },
@@ -91,9 +91,9 @@
       "change_pct": 2.27,
       "ai_summary": "",
       "sector": "Energy",
-      "avg_vol_m": 1066.8,
+      "avg_vol_m": 1114.0,
       "liq_score": 70,
-      "gap_velocity": 0.86,
+      "gap_velocity": 0.82,
       "target_upside": 3.4,
       "rank": 6
     },
@@ -107,9 +107,9 @@
       "change_pct": 1.4,
       "ai_summary": "",
       "sector": "Energy",
-      "avg_vol_m": 675.7,
+      "avg_vol_m": 707.3,
       "liq_score": 70,
-      "gap_velocity": 1.15,
+      "gap_velocity": 1.1,
       "target_upside": 7.0,
       "rank": 7
     },
@@ -123,9 +123,9 @@
       "change_pct": 3.36,
       "ai_summary": "",
       "sector": "Energy",
-      "avg_vol_m": 3606.4,
+      "avg_vol_m": 3735.6,
       "liq_score": 80,
-      "gap_velocity": 1.25,
+      "gap_velocity": 1.21,
       "target_upside": -8.5,
       "rank": 8
     },
@@ -139,9 +139,9 @@
       "change_pct": 4.2,
       "ai_summary": "",
       "sector": "Energy",
-      "avg_vol_m": 611.0,
+      "avg_vol_m": 631.1,
       "liq_score": 70,
-      "gap_velocity": 0.89,
+      "gap_velocity": 0.86,
       "target_upside": -7.8,
       "rank": 9
     },
@@ -155,9 +155,9 @@
       "change_pct": 3.71,
       "ai_summary": "",
       "sector": "Energy",
-      "avg_vol_m": 321.7,
+      "avg_vol_m": 346.2,
       "liq_score": 75,
-      "gap_velocity": 1.54,
+      "gap_velocity": 1.43,
       "target_upside": -20.3,
       "rank": 10
     }
