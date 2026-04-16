@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-15T22:44:05.070481",
+  "timestamp": "2026-04-16T22:44:56.704388",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -204,16 +204,16 @@
           "value": 12318736.0
         },
         {
-          "date": "145",
-          "insider": "ALFORD PEGGY",
-          "type": "Sell",
-          "value": 394094.0
-        },
-        {
-          "date": "143",
+          "date": "144",
           "insider": "ZUCKERBERG MARK",
           "type": "Sell",
           "value": 11939643.0
+        },
+        {
+          "date": "142",
+          "insider": "ALFORD PEGGY",
+          "type": "Sell",
+          "value": 394094.0
         }
       ]
     },
