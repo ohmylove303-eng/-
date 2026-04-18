@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-17T22:35:26.299268",
+  "timestamp": "2026-04-18T22:30:09.881257",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
@@ -58,7 +58,7 @@
       "ticker": "DIA",
       "name": "Dow Jones ETF",
       "flow_score": 75,
-      "price_change_20d": 7.42
+      "price_change_20d": 7.47
     },
     {
       "ticker": "XLK",
