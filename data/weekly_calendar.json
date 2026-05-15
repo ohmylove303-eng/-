@@ -1,22 +1,22 @@
 {
-  "updated": "2026-05-14T23:01:10.831978",
+  "updated": "2026-05-15T22:53:47.141705",
   "events": [
     {
-      "date": "2026-05-14",
+      "date": "2026-05-15",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
     },
     {
-      "event": "FOMC Meeting",
-      "impact": "High",
-      "description": "Fed interest rate decision",
-      "date": "2026-06-04"
-    },
-    {
       "event": "Jobs Report (NFP)",
       "impact": "High",
       "description": "Non-farm payrolls data - key employment indicator",
+      "date": "2026-06-05"
+    },
+    {
+      "event": "FOMC Meeting",
+      "impact": "High",
+      "description": "Fed interest rate decision",
       "date": "2026-06-05"
     },
     {
