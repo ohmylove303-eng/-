@@ -17,29 +17,42 @@
 ```
 질문: 무엇을 해야 하는가?
 
-├─ "시스템 설계가 필요하다"
-│   └─ Claude Sonnet 4 ($3/MTok)
+├─ "전체 시스템 아키텍처 재설계" / "100+파일 리팩토링" / "보안감사"
+│   └─ 🔴 Claude Opus 4.7 ($5/$25 MTok)
+│      프롬프트: DESIGN_AI_PROMPT.md (고급 모드)
+│      특징: SWE-bench Pro 64.3%, 자기검증, 멀티에이전트
+│
+├─ "단일 기능 설계가 필요하다"
+│   └─ 🟡 Claude Sonnet 4.6 ($3/$15 MTok)
 │      프롬프트: DESIGN_AI_PROMPT.md 사용
 │
 ├─ "복잡한 새 코드를 작성해야 한다" (>100줄)
-│   └─ Claude Sonnet 4 ($3/MTok)
+│   └─ 🟡 Claude Sonnet 4.6 ($3/$15 MTok)
 │      프롬프트: IMPLEMENT_AI_PROMPT.md 사용
 │
 ├─ "간단한 수정/추가가 필요하다" (<50줄)
-│   └─ Gemini 2.5 Flash ($0.50/MTok)
+│   └─ 🟢 Gemini 2.5 Flash ($0.50/$3 MTok)
 │      프롬프트: IMPLEMENT_AI_PROMPT.md (간소화)
 │
 ├─ "대량 데이터 분석/요약이 필요하다"
-│   └─ Gemini 2.5 Flash ($0.50/MTok) [1M 컨텍스트]
+│   └─ 🟢 Gemini 2.5 Flash ($0.50/$3 MTok) [1M 컨텍스트]
 │      프롬프트: HARNESS_CONFIG.md 요약 하네스
 │
 ├─ "문서/설명을 작성해야 한다"
-│   └─ GPT-5 mini ($0.25/MTok)
+│   └─ 🟢 GPT-5 mini ($0.25/$2 MTok)
 │      프롬프트: 자유형 + 토큰 제한
 │
 └─ "빠른 프로토타입/실험"
-    └─ Gemini 2.5 Flash ($0.50/MTok)
+    └─ 🟢 Gemini 2.5 Flash ($0.50/$3 MTok)
        프롬프트: 간단 지시 + "코드만 출력"
+```
+
+### 🔴 Opus 4.7 vs 🟡 Sonnet 4.6 빠른 판단:
+```
+"이 작업이 실패하면 시스템이 망가지나?" → YES → Opus
+"1개 파일만 고치면 되나?" → YES → Sonnet
+"AI가 스스로 검증하면서 해야 하나?" → YES → Opus
+"빠르게 끝내면 되나?" → YES → Flash
 ```
 
 ---
