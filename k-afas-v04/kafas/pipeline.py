@@ -21,7 +21,10 @@ from kafas.layers import (
     decision as L7,
     audit as L8,
 )
+from kafas.layers import audit_gate as L9
 from kafas.harness import evaluate_case, HarnessReport
+from kafas.validators import validate_case
+from kafas.metrics import MetricsAggregator
 
 KST = timezone(timedelta(hours=9))
 
@@ -35,6 +38,9 @@ class PipelineResult:
     harness: HarnessReport | None = None
     halted_at: str | None = None     # 중단 단계명
     audit_path: str | None = None    # JSONL 경로
+    ingest_at_kst: str | None = None         # 첩보 수집 시각
+    review_ready_at_kst: str | None = None   # 검토 준비 완료 시각
+    audit_gate: dict[str, Any] | None = None # L9 감사게이트 결과
 
     def status(self) -> str:
         # 게이트 REJECT 또는 하네스 REJECT는 가장 강한 신호.
@@ -105,10 +111,8 @@ class KAFASPipeline:
         cep_meters: float,
         movement_risk: str,
     ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+        # ingest_record가 observed_at_kst 부재 시 raise하므로 fallback 없음.
         ingested = L1.ingest_record(raw, source_type)
-        # 자료수집 시각이 없으면 정규화에 사용할 observed_at_kst 보강
-        if "observed_at_kst" not in ingested:
-            ingested["observed_at_kst"] = ingested["ingest_at_kst"]
         normalized = L2.normalize(ingested)
         cop_entry = L3.build_cop_entry(normalized)
         candidate = L4.detect_candidate(
@@ -187,7 +191,13 @@ class KAFASPipeline:
             "review": None,
             "aar": None,
         }
+        # 진입점 런타임 검증 (validators) — TypedDict 한계 보완
+        validate_case(case)
         result.case = case
+        result.ingest_at_kst = raw.get("observed_at_kst")
+        result.review_ready_at_kst = datetime.now(KST).isoformat(
+            timespec="seconds"
+        )
 
         # 위험게이트 REJECT는 인간검토 이전이라도 즉시 종결.
         if risk.get("gate_result") == "REJECT":
@@ -232,7 +242,34 @@ class KAFASPipeline:
 
         # 감사로그 적재
         result.audit_path = str(L8.append_audit_log(case, self.audit_path))
+        # L9 Audit Gate 평가 (해시체인 무결성 + case 완전성)
+        result.audit_gate = L9.evaluate_audit_gate(case, log_path=self.audit_path)
         return result
+
+    def run_batch(
+        self,
+        items: list[dict[str, Any]],
+        aggregator: MetricsAggregator | None = None,
+    ) -> list[PipelineResult]:
+        """다수 후보 일괄 처리. 각 item은 run()의 kwargs dict.
+
+        TTRR(첩보→검토준비 시간) 측정과 KPI 집계 포함.
+        """
+        results: list[PipelineResult] = []
+        agg = aggregator or MetricsAggregator()
+        for item in items:
+            r = self.run(**item)
+            results.append(r)
+            terminal = r.status()
+            audit_logged = bool(r.audit_path)
+            if r.ingest_at_kst and r.review_ready_at_kst:
+                agg.record(
+                    r.ingest_at_kst, r.review_ready_at_kst,
+                    "PASS" if terminal == "PASS" else
+                    "REJECT" if "REJECT" in terminal else "HOLD",
+                    audit_logged,
+                )
+        return results
 
     # 사후평가는 별도 트리거 (실제 결과 확인 후 호출)
     def submit_aar(

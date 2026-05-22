@@ -15,16 +15,29 @@ from dataclasses import dataclass, field
 from typing import Any, Iterable
 
 # ── 금지 표현 (의미 충돌 탐지용) ──────────────────────────
+# 정규식 우회 방지: 띄어쓰기/구두점/대소문자를 제거한 후 비교한다.
 FORBIDDEN_PHRASES: tuple[str, ...] = (
-    "자동사격", "사격제원", "탄도계산",
-    "무기 직접연동", "포탑제어", "발사명령",
-    "특정 표적 공격절차", "재밍 회피 구현",
-    "automated coordinate generation",
-    "kill chain", "strike planning",
-    "autonomous fire", "firing data",
-    "ballistic calculation", "direct weapon control",
-    "turret control", "fire command",
+    "자동사격", "사격제원", "탄도계산", "사격지시", "발사지시",
+    "무기직접연동", "포탑제어", "발사명령", "타격명령",
+    "특정표적공격절차", "재밍회피구현", "사격승인",
+    "automatedcoordinategeneration",
+    "killchain", "strikeplanning", "strikeauthorization",
+    "autonomousfire", "firingdata", "firingsolution",
+    "ballisticcalculation", "directweaponcontrol",
+    "turretcontrol", "firecommand", "fireorder",
+    "engageorder", "weaponrelease",
 )
+
+
+def _normalize_for_collision(text: str) -> str:
+    """공백/구두점/대소문자 차이를 제거해 우회 시도를 차단."""
+    if not text:
+        return ""
+    out = []
+    for ch in text.lower():
+        if ch.isalnum() or ord(ch) > 127:  # 한글/한자 보존
+            out.append(ch)
+    return "".join(out)
 
 # 허용된 의사결정 옵션 (선택지 무결성)
 REQUIRED_OPTIONS: frozenset[str] = frozenset({
@@ -83,11 +96,14 @@ def invariant_option_set(allowed_options: Iterable[str]) -> tuple[Verdict, str]:
 
 # ── I3. 의미충돌 탐지 (Semantic Collision Detector) ─────
 def invariant_semantic_collision(text_corpus: str) -> tuple[Verdict, str]:
-    """문서/추천/이유 등 텍스트에 금지 표현이 포함되면 REJECT."""
+    """문서/추천/이유 등 텍스트에 금지 표현이 포함되면 REJECT.
+
+    띄어쓰기/구두점/대소문자 우회 시도를 차단하기 위해 정규화 후 비교.
+    """
     if not text_corpus:
         return "PASS", "no_text"
-    lowered = text_corpus.lower()
-    hits = [p for p in FORBIDDEN_PHRASES if p.lower() in lowered]
+    normalized = _normalize_for_collision(text_corpus)
+    hits = [p for p in FORBIDDEN_PHRASES if p in normalized]
     if hits:
         return "REJECT", f"forbidden_phrase:{hits[:3]}"
     return "PASS", "semantic_ok"
