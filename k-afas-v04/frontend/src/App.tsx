@@ -19,6 +19,8 @@ import MapPanel from "./panels/MapPanel";
 import EvidencePanel from "./panels/EvidencePanel";
 import DecisionPanel from "./panels/DecisionPanel";
 import AuditPanel from "./panels/AuditPanel";
+import LockScreen from "./components/LockScreen";
+import { useSessionLock } from "./hooks/useSessionLock";
 import { CaseResponse } from "./types";
 import { fetchCases, subscribeCases } from "./api";
 import "./App.css";
@@ -27,6 +29,7 @@ export default function App() {
   const [cases, setCases] = useState<CaseResponse[]>([]);
   const [selectedCase, setSelectedCase] = useState<CaseResponse | null>(null);
   const [connected, setConnected] = useState(false);
+  const { locked, remainingSec, unlock } = useSessionLock();
 
   // 초기 데이터 로드 (mock 또는 API)
   useEffect(() => {
@@ -51,6 +54,9 @@ export default function App() {
 
   return (
     <div className="console-root">
+      {/* R19: 5분 비활동 자동잠금 */}
+      {locked && <LockScreen onUnlock={unlock} />}
+
       {/* 헤더 */}
       <header className="console-header">
         <h1 className="console-title">K-AFAS 검토 콘솔</h1>
@@ -58,6 +64,9 @@ export default function App() {
           <span className={`status-dot ${connected ? "online" : "offline"}`} />
           <span>{connected ? "실시간 연결" : "오프라인"}</span>
           <span className="case-count">대기 {cases.length}건</span>
+          <span style={{ fontSize: "10px", color: remainingSec < 60 ? "#ef4444" : "#64748b" }}>
+            잠금 {Math.floor(remainingSec / 60)}:{String(remainingSec % 60).padStart(2, "0")}
+          </span>
         </div>
       </header>
 
