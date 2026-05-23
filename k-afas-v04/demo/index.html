@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-AFAS v0.4.1 검토 콘솔 시현</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; }
+
+/* 헤더 */
+.header { display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; background: #1e293b; border-bottom: 1px solid #334155; height: 48px; }
+.title { font-size: 16px; font-weight: 700; color: #f1f5f9; }
+.status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #94a3b8; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.badge { padding: 2px 8px; background: #334155; border-radius: 4px; font-weight: 600; }
+
+/* 그리드 */
+.grid { display: grid; grid-template-columns: 60fr 40fr; grid-template-rows: 1fr 1fr 1fr; gap: 2px; height: calc(100vh - 48px); }
+.panel { background: #1e293b; border: 1px solid #334155; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+.panel-map { grid-row: 1/4; grid-column: 1; }
+.panel-evidence { grid-row: 1; grid-column: 2; }
+.panel-decision { grid-row: 2; grid-column: 2; }
+.panel-audit { grid-row: 3; grid-column: 2; }
+
+.ph { display: flex; align-items: center; justify-content: space-between; padding: 6px 12px; background: #0f172a; border-bottom: 1px solid #334155; font-size: 12px; font-weight: 600; color: #cbd5e1; }
+.pb { flex: 1; overflow-y: auto; padding: 8px; }
+
+/* 레이어 토글 */
+.layers { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px 8px; border-bottom: 1px solid #1e293b; }
+.chip { padding: 2px 8px; border-radius: 12px; font-size: 10px; cursor: pointer; transition: all 0.15s; border: 1px solid #475569; }
+.chip.on { background: #3b82f6; border-color: #3b82f6; color: #fff; }
+.chip.off { background: transparent; color: #64748b; }
+
+/* 지도 (SVG 시뮬레이션) */
+.map-area { flex: 1; position: relative; background: #0a1628; overflow: hidden; }
+.map-grid { position: absolute; inset: 0; opacity: 0.15; }
+.marker { position: absolute; width: 16px; height: 16px; border-radius: 50%; border: 2px solid #fff; cursor: pointer; transition: transform 0.2s; }
+.marker:hover { transform: scale(1.5); }
+.marker.pass { background: #22c55e; }
+.marker.hold { background: #eab308; }
+.marker.reject { background: #ef4444; }
+.marker-label { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-size: 9px; white-space: nowrap; color: #fff; text-shadow: 0 1px 2px #000; }
+.marker.selected { box-shadow: 0 0 0 4px rgba(59,130,246,0.5); transform: scale(1.3); }
+
+/* 위젯 */
+.wcard { background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 8px 12px; margin-bottom: 6px; }
+.wtitle { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.wval { font-size: 20px; font-weight: 700; color: #f1f5f9; }
+
+/* 증거 카드 */
+.evi-card { display: flex; align-items: center; gap: 8px; background: #0f172a; border: 1px solid #334155; border-radius: 6px; padding: 8px; margin-bottom: 4px; }
+.evi-icon { font-size: 18px; }
+.evi-info { flex: 1; }
+.evi-title { font-size: 12px; font-weight: 600; }
+.evi-meta { font-size: 10px; color: #94a3b8; }
+.freshness-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* 버튼 */
+.btn { padding: 8px 12px; border: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: opacity 0.15s; width: 100%; }
+.btn:hover { opacity: 0.85; }
+.btn-approve { background: #22c55e; color: #052e16; }
+.btn-hold { background: #eab308; color: #422006; }
+.btn-reject { background: #ef4444; color: #fff; }
+.btn-more { background: #3b82f6; color: #fff; }
+
+/* 게이트바 */
+.gate-bar { display: flex; height: 16px; border-radius: 4px; overflow: hidden; margin-bottom: 4px; }
+.gate-pass { background: #22c55e; }
+.gate-hold { background: #eab308; }
+.gate-reject { background: #ef4444; }
+
+/* 잠금 타이머 */
+.timer { font-size: 10px; color: #64748b; }
+
+/* 타겟 리스트 */
+.tgt-list { display: flex; gap: 4px; padding: 4px 8px; border-top: 1px solid #1e293b; background: #0f172a; }
+.tgt-btn { padding: 3px 8px; border-radius: 4px; border: none; font-size: 10px; cursor: pointer; }
+.tgt-btn.active { background: #3b82f6; color: #fff; }
+.tgt-btn.inactive { background: #334155; color: #94a3b8; }
+
+/* 좌표 바 */
+.coord-bar { padding: 6px 12px; background: #0f172a; border-top: 1px solid #334155; display: flex; align-items: center; gap: 12px; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header class="header">
+  <h1 class="title">K-AFAS 검토 콘솔 v0.4.1</h1>
+  <div class="status">
+    <span class="dot"></span>
+    <span>실시간 연결</span>
+    <span class="badge">대기 <span id="caseCount">5</span>건</span>
+    <span class="timer" id="lockTimer">잠금 4:59</span>
+  </div>
+</header>
+
+<!-- 4-패널 그리드 -->
+<main class="grid">
+
+  <!-- 지도 패널 -->
+  <section class="panel panel-map">
+    <div class="ph">
+      <span>지도/지형 패널 (3D)</span>
+      <span style="font-size:10px;color:#64748b">DISPLAY_ONLY</span>
+    </div>
+    <div class="layers" id="layerBar"></div>
+    <div class="map-area" id="mapArea">
+      <!-- SVG 그리드 배경 -->
+      <svg class="map-grid" width="100%" height="100%">
+        <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+      </svg>
+      <!-- 마커들 동적 생성 -->
+    </div>
+    <div class="coord-bar" id="coordBar">
+      <span style="font-weight:700" id="selId">TGT-001</span>
+      <span style="color:#22c55e;font-weight:600" id="selGate">PASS</span>
+      <span id="selCiv">민간위험: LOW</span>
+      <span id="selFri">아군위험: LOW</span>
+      <span style="color:#64748b">DISPLAY_ONLY</span>
+    </div>
+    <div class="tgt-list" id="tgtList"></div>
+  </section>
+
+  <!-- 증거 패널 -->
+  <section class="panel panel-evidence">
+    <div class="ph"><span>증거 검토</span><span style="font-size:10px;color:#64748b" id="eviCount">3건</span></div>
+    <div class="pb" id="eviBody"></div>
+  </section>
+
+  <!-- 의사결정 패널 -->
+  <section class="panel panel-decision">
+    <div class="ph"><span>의사결정 지원</span><span style="font-size:10px;color:#64748b" id="decStatus"></span></div>
+    <div class="pb" id="decBody"></div>
+  </section>
+
+  <!-- 감사 패널 -->
+  <section class="panel panel-audit">
+    <div class="ph"><span>감사/메트릭</span><button onclick="verifyChain()" style="padding:2px 8px;font-size:10px;background:#475569;color:#fff;border:none;border-radius:4px;cursor:pointer">체인 검증</button></div>
+    <div class="pb" id="auditBody"></div>
+  </section>
+
+</main>
+
+<script>
+// ── 데이터 ──────────────────────────────────────────
+const CASES = [
+  { id: "TGT-001", gate: "PASS", civ: "LOW", fri: "LOW", ttrr: 12.4, rec: "REVIEW_REQUIRED", status: "HALTED@awaiting_human_review", x: 55, y: 30 },
+  { id: "TGT-002", gate: "HOLD", civ: "MEDIUM", fri: "LOW", ttrr: 28.7, rec: "HOLD", status: "HALTED@awaiting_human_review", x: 40, y: 45 },
+  { id: "TGT-003", gate: "REJECT", civ: "HIGH", fri: "MEDIUM", ttrr: 5.1, rec: "REJECT", status: "REJECTED", x: 70, y: 55 },
+  { id: "TGT-004", gate: "PASS", civ: "LOW", fri: "LOW", ttrr: 15.2, rec: "REVIEW_REQUIRED", status: "HALTED@awaiting_human_review", x: 80, y: 35 },
+  { id: "TGT-005", gate: "HOLD", civ: "MEDIUM", fri: "MEDIUM", ttrr: 42.8, rec: "HOLD", status: "HALTED@awaiting_human_review", x: 30, y: 70 },
+];
+
+const EVIDENCE = {
+  "TGT-001": [
+    { icon: "📹", src: "RQ-101 UAV", type: "uav_video", time: "14:32 KST", fresh: "#009E73", conf: 85 },
+    { icon: "📡", src: "전자전대대", type: "sigint", time: "14:28 KST", fresh: "#009E73", conf: 72 },
+    { icon: "👤", src: "GOP 관측소", type: "humint", time: "14:15 KST", fresh: "#F0E442", conf: 60 },
+  ],
+  "TGT-002": [{ icon: "🛰️", src: "정찰위성", type: "satellite", time: "13:45 KST", fresh: "#F0E442", conf: 68 }],
+  "TGT-003": [{ icon: "📹", src: "KUS-FS UAV", type: "uav_video", time: "12:10 KST", fresh: "#D55E00", conf: 45 }],
+  "TGT-004": [
+    { icon: "📡", src: "합참 신호정보", type: "sigint", time: "14:40 KST", fresh: "#009E73", conf: 90 },
+    { icon: "📹", src: "소형 UAV", type: "uav_video", time: "14:38 KST", fresh: "#009E73", conf: 82 },
+  ],
+  "TGT-005": [{ icon: "👤", src: "첩보원 보고", type: "humint", time: "11:30 KST", fresh: "#D55E00", conf: 40 }],
+};
+
+const LAYERS = ["지형","교통망","수계","민간거주","제한구역","아군위치","충돌영역","적위험도","표적후보","증거마커","신선도","좌표품질","게이트결과","검토대기열","감사추적"];
+const LAYER_DEFAULTS = [true,true,false,true,true,true,true,true,true,false,true,true,true,true,false];
+
+let selected = CASES[0];
+let layerState = [...LAYER_DEFAULTS];
+
+// ── 렌더 함수 ─────────────────────────────────────
+function renderLayers() {
+  const bar = document.getElementById("layerBar");
+  bar.innerHTML = LAYERS.map((l, i) =>
+    `<span class="chip ${layerState[i] ? 'on' : 'off'}" onclick="toggleLayer(${i})">${l}</span>`
+  ).join("");
+}
+
+function toggleLayer(i) {
+  layerState[i] = !layerState[i];
+  renderLayers();
+}
+
+function renderMarkers() {
+  const area = document.getElementById("mapArea");
+  // 기존 마커 제거
+  area.querySelectorAll(".marker").forEach(m => m.remove());
+  
+  CASES.forEach(c => {
+    const m = document.createElement("div");
+    m.className = `marker ${c.gate.toLowerCase()} ${c.id === selected.id ? 'selected' : ''}`;
+    m.style.left = c.x + "%";
+    m.style.top = c.y + "%";
+    m.innerHTML = `<span class="marker-label">${c.id}</span>`;
+    m.onclick = () => selectCase(c);
+    area.appendChild(m);
+  });
+}
+
+function renderTgtList() {
+  const list = document.getElementById("tgtList");
+  list.innerHTML = CASES.map(c =>
+    `<button class="tgt-btn ${c.id === selected.id ? 'active' : 'inactive'}" onclick="selectCase(CASES[${CASES.indexOf(c)}])">${c.id}</button>`
+  ).join("");
+}
+
+function selectCase(c) {
+  selected = c;
+  renderMarkers();
+  renderTgtList();
+  renderCoordBar();
+  renderEvidence();
+  renderDecision();
+}
+
+function renderCoordBar() {
+  document.getElementById("selId").textContent = selected.id;
+  const gateEl = document.getElementById("selGate");
+  gateEl.textContent = selected.gate;
+  gateEl.style.color = selected.gate === "PASS" ? "#22c55e" : selected.gate === "HOLD" ? "#eab308" : "#ef4444";
+  document.getElementById("selCiv").textContent = "민간위험: " + selected.civ;
+  document.getElementById("selFri").textContent = "아군위험: " + selected.fri;
+}
+
+function renderEvidence() {
+  const evis = EVIDENCE[selected.id] || [];
+  document.getElementById("eviCount").textContent = evis.length + "건";
+  document.getElementById("eviBody").innerHTML = evis.map(e => `
+    <div class="evi-card">
+      <span class="evi-icon">${e.icon}</span>
+      <div class="evi-info">
+        <div class="evi-title">${e.src}</div>
+        <div class="evi-meta">${e.type} · ${e.time} · 신뢰도 ${e.conf}%</div>
+      </div>
+      <span class="freshness-dot" style="background:${e.fresh}"></span>
+    </div>
+  `).join("");
+}
+
+function renderDecision() {
+  document.getElementById("decStatus").textContent = selected.id + " · " + selected.status;
+  const isRejected = selected.status === "REJECTED";
+  document.getElementById("decBody").innerHTML = `
+    <div class="wcard">
+      <div style="display:flex;justify-content:space-between;font-size:11px">
+        <span>게이트: <b style="color:${selected.gate==='PASS'?'#22c55e':selected.gate==='HOLD'?'#eab308':'#ef4444'}">${selected.gate}</b></span>
+        <span>추천: <b>${selected.rec}</b></span>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;margin-top:4px">
+        <span>민간위험: ${selected.civ}</span>
+        <span>아군위험: ${selected.fri}</span>
+      </div>
+    </div>
+    <textarea placeholder="결정 사유 입력 (필수)..." style="width:100%;height:36px;resize:none;background:#0f172a;border:1px solid #334155;border-radius:4px;padding:6px 8px;color:#e2e8f0;font-size:11px;margin-bottom:8px"></textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+      <button class="btn btn-more" onclick="doAction('추가증거요청')">추가증거요청</button>
+      <button class="btn btn-hold" onclick="doAction('보류')">보류</button>
+      <button class="btn btn-reject" ${isRejected?'disabled':''} onclick="doAction('거부')">거부</button>
+      <button class="btn btn-approve" ${isRejected?'disabled':''} onclick="doAction('다음검토 승인')">다음검토 승인</button>
+    </div>
+    <div style="margin-top:8px;font-size:9px;color:#475569;border-top:1px solid #1e293b;padding-top:6px">
+      ⚠ 본 시스템은 의사결정 <b>지원</b>만 제공합니다. 최종 결정은 인가된 인간 지휘관의 권한입니다.
+    </div>
+  `;
+}
+
+function renderAudit() {
+  const ttrrs = CASES.map(c => c.ttrr).sort((a,b) => a-b);
+  const p50 = ttrrs[Math.floor(ttrrs.length*0.5)];
+  const p95 = ttrrs[Math.floor(ttrrs.length*0.95)];
+  const passN = CASES.filter(c=>c.gate==="PASS").length;
+  const holdN = CASES.filter(c=>c.gate==="HOLD").length;
+  const rejN = CASES.filter(c=>c.gate==="REJECT").length;
+  const total = CASES.length;
+
+  document.getElementById("auditBody").innerHTML = `
+    <div class="wcard">
+      <div class="wtitle">TTRR (Time-to-Review-Ready)</div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div><span class="wval" style="color:${p50<=30?'#22c55e':'#eab308'}">${p50.toFixed(1)}</span><span style="font-size:11px;color:#94a3b8;margin-left:4px">s (P50)</span></div>
+        <div style="text-align:right;font-size:11px"><div style="color:${p95<=60?'#22c55e':'#eab308'}">P95: ${p95.toFixed(1)}s</div></div>
+      </div>
+      <div style="font-size:10px;color:#64748b;margin-top:4px">처리 ${total}건 · 목표 P50≤30s P95≤60s</div>
+    </div>
+    <div class="wcard">
+      <div class="wtitle">안전게이트 분포</div>
+      <div class="gate-bar">
+        <div class="gate-pass" style="width:${passN/total*100}%"></div>
+        <div class="gate-hold" style="width:${holdN/total*100}%"></div>
+        <div class="gate-reject" style="width:${rejN/total*100}%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:10px">
+        <span style="color:#22c55e">PASS ${passN} (${Math.round(passN/total*100)}%)</span>
+        <span style="color:#eab308">HOLD ${holdN} (${Math.round(holdN/total*100)}%)</span>
+        <span style="color:#ef4444">REJECT ${rejN} (${Math.round(rejN/total*100)}%)</span>
+      </div>
+    </div>
+    <div class="wcard">
+      <div class="wtitle">정보 신선도</div>
+      <div style="display:flex;gap:4px;margin-bottom:4px">
+        <span style="width:12px;height:12px;border-radius:50%;background:#009E73"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#009E73"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#009E73"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#F0E442"></span>
+        <span style="width:12px;height:12px;border-radius:50%;background:#D55E00"></span>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#94a3b8">
+        <span>● 5분내(3)</span><span>● 15분내(1)</span><span>● 60분내(1)</span>
+      </div>
+    </div>
+    <div class="wcard" id="chainResult" style="display:none">
+      <div class="wtitle">SHA-256 해시체인</div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="width:10px;height:10px;border-radius:50%;background:#22c55e"></span>
+        <span style="font-size:12px;font-weight:600;color:#22c55e">무결성 확인</span>
+      </div>
+    </div>
+  `;
+}
+
+function doAction(action) {
+  const ta = document.querySelector("#decBody textarea");
+  if (!ta || !ta.value.trim()) { alert("결정 사유를 입력하세요."); return; }
+  alert(`[${selected.id}] ${action} 완료\n사유: ${ta.value}`);
+  ta.value = "";
+}
+
+function verifyChain() {
+  document.getElementById("chainResult").style.display = "block";
+}
+
+// ── 잠금 타이머 ─────────────────────────────────────
+let lockSec = 299;
+setInterval(() => {
+  lockSec = Math.max(0, lockSec - 1);
+  const m = Math.floor(lockSec / 60);
+  const s = String(lockSec % 60).padStart(2, "0");
+  document.getElementById("lockTimer").textContent = `잠금 ${m}:${s}`;
+  document.getElementById("lockTimer").style.color = lockSec < 60 ? "#ef4444" : "#64748b";
+}, 1000);
+
+// 활동 시 리셋
+document.addEventListener("mousemove", () => { lockSec = 299; });
+document.addEventListener("keydown", () => { lockSec = 299; });
+
+// ── 초기화 ──────────────────────────────────────────
+renderLayers();
+renderMarkers();
+renderTgtList();
+renderCoordBar();
+renderEvidence();
+renderDecision();
+renderAudit();
+
+// 클립보드 복사 차단
+document.addEventListener("copy", (e) => { e.preventDefault(); console.warn("[K-AFAS] 좌표 클립보드 복사 차단 (DISPLAY_ONLY)"); });
+</script>
+</body>
+</html>
