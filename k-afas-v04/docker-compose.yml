@@ -1,0 +1,35 @@
+# K-AFAS v0.4.1 — 원클릭 실행 (FastAPI + React)
+# 사용법: docker-compose up --build
+# 접속: http://localhost:3000
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - KAFAS_TOKEN_COMMANDER=dev-commander-token
+      - KAFAS_TOKEN_ANALYST=dev-analyst-token
+      - KAFAS_TOKEN_SAFETY=dev-safety-token
+      - KAFAS_TOKEN_AUDITOR=dev-auditor-token
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_CESIUM_TOKEN=${CESIUM_ION_TOKEN:-}
+    depends_on:
+      backend:
+        condition: service_healthy
