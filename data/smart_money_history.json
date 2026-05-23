@@ -11778,5 +11778,100 @@
       }
     ],
     "saved_at": "2026-05-22T11:52:47.420312"
+  },
+  "2026-05-23": {
+    "recommendations": [
+      {
+        "ticker": "GEN",
+        "name": "Gen Digital Inc.",
+        "recommended_price": 24.85,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 139.98,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "NXPI",
+        "name": "NXP Semiconductors N.V.",
+        "recommended_price": 299.38,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "CSCO",
+        "name": "Cisco Systems, Inc.",
+        "recommended_price": 118.2,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "FSLR",
+        "name": "First Solar, Inc.",
+        "recommended_price": 248.88,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "AMT",
+        "name": "American Tower Corporation",
+        "recommended_price": 183.78,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "FRT",
+        "name": "Federal Realty Investment Trust",
+        "recommended_price": 118.61,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "OKE",
+        "name": "ONEOK, Inc.",
+        "recommended_price": 92.62,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "MPC",
+        "name": "Marathon Petroleum Corporation",
+        "recommended_price": 248.43,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      },
+      {
+        "ticker": "FICO",
+        "name": "Fair Isaac Corporation",
+        "recommended_price": 1228.1,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-23"
+      }
+    ],
+    "saved_at": "2026-05-23T10:43:55.116202"
   }
 }
