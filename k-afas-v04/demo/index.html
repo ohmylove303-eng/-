@@ -5,313 +5,270 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>K-AFAS v0.4.1 검토 콘솔</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, 'Pretendard', sans-serif; background: #0f172a; color: #e2e8f0; }
-
-/* ── 헤더 ── */
-.header { display:flex; align-items:center; justify-content:space-between; padding:8px 16px; background:#1e293b; border-bottom:1px solid #334155; height:48px; }
-.title { font-size:16px; font-weight:700; color:#f1f5f9; }
-.status { display:flex; align-items:center; gap:8px; font-size:12px; color:#94a3b8; }
-.dot { width:8px; height:8px; border-radius:50%; background:#22c55e; animation:pulse 2s infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-.badge { padding:2px 8px; background:#334155; border-radius:4px; font-weight:600; }
-.timer { font-size:10px; }
-
-/* ── 메인 그리드: 좌 지도(60%) + 우 패널(40%) ── */
-.main { display:grid; grid-template-columns:60fr 40fr; height:calc(100vh - 48px); gap:2px; }
-
-/* ── 좌측 지도 패널 ── */
-.left-panel { display:flex; flex-direction:column; background:#0a1628; overflow:hidden; border:1px solid #334155; border-radius:4px; }
-.map-header { display:flex; align-items:center; justify-content:space-between; padding:6px 12px; background:#0f172a; border-bottom:1px solid #334155; font-size:12px; font-weight:600; color:#cbd5e1; }
-.layers { display:flex; flex-wrap:wrap; gap:3px; padding:4px 8px; border-bottom:1px solid #1e293b; }
-.chip { padding:2px 7px; border-radius:12px; font-size:9px; cursor:pointer; border:1px solid #475569; transition:all 0.15s; user-select:none; }
-.chip.on { background:#3b82f6; border-color:#3b82f6; color:#fff; }
-.chip.off { background:transparent; color:#64748b; }
-.map-area { flex:1; position:relative; overflow:hidden; }
-.map-grid-bg { position:absolute; inset:0; opacity:0.12; }
-.marker { position:absolute; width:14px; height:14px; border-radius:50%; border:2px solid #fff; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s; z-index:2; }
-.marker:hover { transform:scale(1.5); }
-.marker.selected { box-shadow:0 0 0 4px rgba(59,130,246,0.5); transform:scale(1.4); }
-.marker.pass { background:#22c55e; }
-.marker.hold { background:#eab308; }
-.marker.reject { background:#ef4444; }
-.marker-label { position:absolute; top:-16px; left:50%; transform:translateX(-50%); font-size:8px; white-space:nowrap; color:#fff; text-shadow:0 1px 2px #000; pointer-events:none; }
-.coord-bar { padding:5px 12px; background:#0f172a; border-top:1px solid #334155; display:flex; align-items:center; gap:10px; font-size:11px; }
-.tgt-list { display:flex; gap:3px; padding:4px 8px; border-top:1px solid #1e293b; background:#0f172a; }
-.tgt-btn { padding:2px 7px; border-radius:4px; border:none; font-size:9px; cursor:pointer; }
-.tgt-btn.active { background:#3b82f6; color:#fff; }
-.tgt-btn.inactive { background:#334155; color:#94a3b8; }
-
-/* ── 우측 패널 (스크롤) ── */
-.right-panel { display:flex; flex-direction:column; gap:2px; overflow-y:auto; }
-.panel { background:#1e293b; border:1px solid #334155; border-radius:4px; overflow:hidden; display:flex; flex-direction:column; }
-.ph { display:flex; align-items:center; justify-content:space-between; padding:6px 12px; background:#0f172a; border-bottom:1px solid #334155; font-size:12px; font-weight:600; color:#cbd5e1; flex-shrink:0; }
-.pb { padding:8px; }
-
-/* ── 메트릭 패널 ── */
-.metrics-panel { display:flex; flex-direction:column; gap:10px; padding:12px; background:rgba(15,23,42,0.92); border:1px solid rgba(148,163,184,0.18); border-radius:10px; }
-.metrics-header { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
-.metrics-header h3 { margin:0; font-size:13px; font-weight:700; }
-.metrics-header p { margin:3px 0 0; color:#94a3b8; font-size:11px; }
-.scenario-badge { padding:4px 8px; border-radius:999px; font-size:10px; font-weight:700; border:1px solid rgba(255,255,255,0.12); }
-.scenario-clean { color:#22c55e; background:rgba(34,197,94,0.1); }
-.scenario-degraded { color:#eab308; background:rgba(234,179,8,0.1); }
-.scenario-contested { color:#ef4444; background:rgba(239,68,68,0.1); }
-.metrics-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
-.metric-card { padding:8px; border-radius:8px; background:rgba(30,41,59,0.75); border:1px solid rgba(148,163,184,0.12); }
-.metric-card.primary { background:rgba(14,165,233,0.12); border-color:rgba(14,165,233,0.28); }
-.metric-label { display:block; color:#94a3b8; font-size:10px; }
-.metric-card strong { display:block; margin-top:3px; font-size:18px; line-height:1.1; }
-.metric-card small { display:block; margin-top:3px; color:#64748b; font-size:9px; }
-.chart-block { padding:8px; border-radius:8px; background:rgba(2,6,23,0.42); border:1px solid rgba(148,163,184,0.1); }
-.chart-title { margin-bottom:6px; color:#cbd5e1; font-size:11px; font-weight:700; }
-.success-bars { display:flex; flex-direction:column; gap:6px; }
-.bar-row { display:flex; align-items:center; gap:6px; font-size:10px; }
-.bar-label { width:90px; color:#94a3b8; text-align:right; }
-.bar-track { flex:1; height:14px; background:rgba(15,23,42,0.9); border-radius:999px; overflow:hidden; }
-.bar-fill { height:100%; border-radius:999px; transition:width 0.5s; }
-.bar-val { width:40px; font-weight:600; }
-.stage-stack { display:flex; width:100%; height:24px; overflow:hidden; border-radius:999px; background:rgba(15,23,42,0.9); border:1px solid rgba(148,163,184,0.16); }
-.stage-seg { display:flex; align-items:center; justify-content:center; min-width:20px; color:#0f172a; font-size:8px; font-weight:800; white-space:nowrap; }
-.stage-SENSOR { background:#38bdf8; }
-.stage-AI { background:#a78bfa; }
-.stage-TRACK { background:#34d399; }
-.stage-REVIEW_PACKAGE { background:#fbbf24; }
-.stage-HITL { background:#fb7185; }
-.stage-LINK { background:#94a3b8; }
-.stage-legend { display:grid; grid-template-columns:repeat(2,1fr); gap:4px 8px; margin-top:8px; }
-.legend-item { display:flex; align-items:center; gap:4px; color:#94a3b8; font-size:10px; }
-.legend-item strong { margin-left:auto; color:#e5e7eb; }
-.legend-dot { width:7px; height:7px; border-radius:999px; flex:0 0 auto; }
-.safety-note { padding:6px 8px; border-radius:8px; background:rgba(15,23,42,0.65); color:#94a3b8; font-size:10px; line-height:1.4; border:1px dashed rgba(148,163,184,0.22); }
-
-/* ── 증거 카드 ── */
-.evi-card { display:flex; align-items:center; gap:8px; background:#0f172a; border:1px solid #334155; border-radius:6px; padding:6px 8px; margin-bottom:4px; }
-.evi-icon { font-size:16px; }
-.evi-info { flex:1; }
-.evi-title { font-size:11px; font-weight:600; }
-.evi-meta { font-size:9px; color:#94a3b8; }
-.freshness-dot { width:7px; height:7px; border-radius:50%; }
-
-/* ── 의사결정 버튼 ── */
-.btn { padding:6px 10px; border:none; border-radius:4px; font-size:11px; font-weight:600; cursor:pointer; width:100%; transition:opacity 0.15s; }
-.btn:hover { opacity:0.85; }
-.btn:disabled { opacity:0.4; cursor:not-allowed; }
-.btn-approve { background:#22c55e; color:#052e16; }
-.btn-hold { background:#eab308; color:#422006; }
-.btn-reject { background:#ef4444; color:#fff; }
-.btn-more { background:#3b82f6; color:#fff; }
-
-/* 스크롤바 */
-::-webkit-scrollbar { width:4px; }
-::-webkit-scrollbar-track { background:#1e293b; }
-::-webkit-scrollbar-thumb { background:#475569; border-radius:2px; }
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,'Pretendard',sans-serif;background:#050814;color:#e5e7eb}
+.header{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#0f172a;border-bottom:1px solid #1e293b;height:44px}
+.title{font-size:14px;font-weight:700;color:#f1f5f9;letter-spacing:-0.3px}
+.status{display:flex;align-items:center;gap:8px;font-size:11px;color:#9ca3af}
+.dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.badge{padding:2px 7px;background:#1e293b;border:1px solid #334155;border-radius:4px;font-weight:600;font-size:10px}
+.timer{font-size:10px}
+.main{display:grid;grid-template-columns:60fr 40fr;height:calc(100vh - 44px);gap:1px;background:#0f172a}
 </style>
 </head>
 <body>
-
 <header class="header">
-  <h1 class="title">K-AFAS v0.4.1 검토 콘솔</h1>
-  <div class="status">
-    <span class="dot"></span><span>실시간 연결</span>
-    <span class="badge">대기 <span id="caseCount">5</span>건</span>
-    <span class="timer" id="lockTimer">잠금 4:59</span>
-  </div>
+<h1 class="title">K-AFAS v0.4.1 검토 콘솔</h1>
+<div class="status">
+<span class="dot"></span><span>실시간</span>
+<span class="badge">대기 5건</span>
+<span class="badge" style="border-color:#22c55e33">DISPLAY_ONLY</span>
+<span class="timer" id="lockTimer">잠금 4:59</span>
+</div>
 </header>
+<main class="main" id="mainGrid"></main>
 
-<main class="main">
-  <!-- 좌측: 지도 패널 -->
-  <section class="left-panel">
-    <div class="map-header"><span>지도/지형 패널 (3D)</span><span style="font-size:10px;color:#64748b">DISPLAY_ONLY · CesiumJS</span></div>
-    <div class="layers" id="layerBar"></div>
-    <div class="map-area" id="mapArea">
-      <svg class="map-grid-bg" width="100%" height="100%"><defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/></svg>
-    </div>
-    <div class="coord-bar"><span style="font-weight:700" id="selId">TGT-001</span><span style="font-weight:600" id="selGate">PASS</span><span id="selCiv">민간:LOW</span><span id="selFri">아군:LOW</span><span style="color:#64748b">DISPLAY_ONLY</span></div>
-    <div class="tgt-list" id="tgtList"></div>
-  </section>
+<style>
+/* 좌측 지도 패널 */
+.left-panel{display:flex;flex-direction:column;background:#020617;overflow:hidden}
+.map-toolbar{display:flex;align-items:center;justify-content:space-between;padding:5px 10px;background:#0f172a;border-bottom:1px solid #1e293b;font-size:11px;color:#9ca3af}
+.layers{display:flex;flex-wrap:wrap;gap:3px;padding:4px 8px;border-bottom:1px solid #111827}
+.chip{padding:2px 6px;border-radius:10px;font-size:9px;cursor:pointer;border:1px solid #334155;user-select:none;transition:all .15s}
+.chip.on{background:#3b82f6;border-color:#3b82f6;color:#fff}
+.chip.off{background:transparent;color:#6b7280}
+.map-area{flex:1;position:relative;overflow:hidden;background:#020617}
+.map-svg{position:absolute;inset:0;opacity:.1}
+.marker{position:absolute;width:14px;height:14px;border-radius:50%;border:2px solid #020617;cursor:pointer;transition:transform .2s,box-shadow .2s;z-index:2}
+.marker:hover{transform:scale(1.4)}
+.marker.sel{box-shadow:0 0 0 4px rgba(59,130,246,.5);transform:scale(1.4)}
+.marker-lbl{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:8px;white-space:nowrap;color:#fff;text-shadow:0 1px 2px #000;pointer-events:none}
+.coord-bar{padding:4px 10px;background:#0f172a;border-top:1px solid #1e293b;display:flex;align-items:center;gap:8px;font-size:10px;color:#9ca3af}
+.tgt-list{display:flex;gap:3px;padding:3px 8px;border-top:1px solid #111827;background:#0f172a}
+.tgt-btn{padding:2px 6px;border-radius:3px;border:none;font-size:9px;cursor:pointer}
+.tgt-btn.active{background:#3b82f6;color:#fff}
+.tgt-btn.inactive{background:#1e293b;color:#6b7280}
+</style>
 
-  <!-- 우측: 3단 패널 -->
-  <div class="right-panel">
-    <!-- 메트릭 패널 -->
-    <section class="panel">
-      <div class="ph"><span>시뮬레이션 지표</span><span id="scenarioBadge" class="scenario-badge scenario-clean">정상망(Clean)</span></div>
-      <div class="pb" id="metricsBody"></div>
-    </section>
-    <!-- 증거 패널 -->
-    <section class="panel">
-      <div class="ph"><span>증거 검토</span><span style="font-size:10px;color:#64748b" id="eviCount">3건</span></div>
-      <div class="pb" id="eviBody"></div>
-    </section>
-    <!-- 의사결정 패널 -->
-    <section class="panel">
-      <div class="ph"><span>의사결정 지원</span><span style="font-size:10px;color:#64748b" id="decStatus"></span></div>
-      <div class="pb" id="decBody"></div>
-    </section>
-  </div>
-</main>
+<style>
+/* 우측 패널 */
+.right-panel{display:flex;flex-direction:column;gap:1px;overflow-y:auto;background:#0f172a}
+.panel{background:#020617;border:1px solid #111827;border-radius:6px;margin:4px;overflow:hidden;display:flex;flex-direction:column}
+.ph{display:flex;align-items:center;justify-content:space-between;padding:5px 10px;background:#0f172a;border-bottom:1px solid #111827;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.06em}
+.pb{padding:8px 10px}
+/* 메트릭 */
+.m-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.m-card{padding:7px 8px;border-radius:6px;background:#0f172a;border:1px solid #111827}
+.m-card.primary{border-color:#22c55e44;box-shadow:0 0 0 1px rgba(34,197,94,.15)}
+.m-label{font-size:9px;color:#9ca3af;text-transform:uppercase;letter-spacing:.06em}
+.m-val{font-size:18px;font-weight:600;margin-top:2px;color:#e5e7eb}
+.m-hint{font-size:9px;color:#6b7280;margin-top:2px}
+.chart-blk{padding:7px 8px;border-radius:6px;background:#0f172a;border:1px solid #111827;margin-bottom:6px}
+.chart-title{font-size:10px;color:#9ca3af;margin-bottom:5px;font-weight:600}
+.bar-row{display:grid;grid-template-columns:90px 1fr 44px;align-items:center;gap:6px;font-size:10px;color:#9ca3af;margin-bottom:4px}
+.bar-track{height:10px;background:#020617;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;transition:width .4s}
+.bar-val{text-align:right;font-weight:600;color:#e5e7eb}
+.stk-bar{display:flex;height:20px;border-radius:999px;overflow:hidden;background:#020617;border:1px solid #111827}
+.stk-seg{display:flex;align-items:center;justify-content:center;min-width:16px;color:#020617;font-size:8px;font-weight:800;white-space:nowrap}
+.stk-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:3px 8px;margin-top:6px;font-size:9px;color:#9ca3af}
+.leg-item{display:flex;align-items:center;gap:3px}
+.leg-dot{width:6px;height:6px;border-radius:999px}
+.leg-item strong{margin-left:auto;color:#e5e7eb}
+</style>
 
+<style>
+/* 센서카드 */
+.sensor-cols{display:grid;grid-template-columns:1.1fr .9fr;gap:6px}
+.sensor-col-title{font-size:9px;color:#6b7280;margin-bottom:3px;text-transform:uppercase}
+.s-card{display:grid;grid-template-columns:24px 1fr;gap:6px;padding:5px 6px;border-radius:5px;background:#020617;border:1px solid #111827;margin-bottom:3px}
+.s-icon{width:16px;height:16px;border-radius:3px;align-self:center}
+.s-name{font-size:11px;color:#e5e7eb;font-weight:500}
+.s-meta{font-size:9px;color:#6b7280;display:flex;gap:6px;flex-wrap:wrap}
+.s-chip{padding:1px 5px;border-radius:999px;font-size:9px;font-weight:500}
+.s-chip-good{background:#064e3b;color:#6ee7b7}
+.s-chip-warn{background:#7c2d12;color:#fed7aa}
+.s-chip-bad{background:#7f1d1d;color:#fecaca}
+/* 의사결정 */
+.dec-hints{display:flex;flex-direction:column;gap:3px;margin-bottom:6px}
+.dec-hint{display:flex;align-items:center;gap:5px;font-size:10px;padding:3px 5px;border-radius:4px;background:#020617;border:1px solid #020617}
+.dec-hint.rec{border-color:#22c55e44;background:#022c2233}
+.dec-hint-type{min-width:70px;font-weight:600;color:#e5e7eb}
+.dec-hint-reason{flex:1;color:#9ca3af}
+.dec-hint-badge{padding:1px 5px;border-radius:999px;font-size:8px;background:#22c55e;color:#022c22;font-weight:700}
+.dec-btns{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}
+.dec-btn{border-radius:5px;padding:7px 4px;font-size:11px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:transform .1s,box-shadow .1s;color:#e5e7eb}
+.dec-btn:hover{transform:translateY(-1px);box-shadow:0 4px 8px rgba(0,0,0,.3)}
+.dec-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.dec-btn-validate{border-color:#16a34a;background:linear-gradient(180deg,#16a34a,#0f766e)}
+.dec-btn-hold{border-color:#6b7280;background:linear-gradient(180deg,#374151,#111827)}
+.dec-btn-reject{border-color:#b91c1c;background:linear-gradient(180deg,#b91c1c,#7f1d1d)}
+.dec-btn-more{border-color:#0ea5e9;background:linear-gradient(180deg,#0369a1,#0f172a)}
+.dec-note{font-size:9px;color:#6b7280;margin-top:6px;padding-top:5px;border-top:1px dashed #1e293b;line-height:1.4}
+.safety-note{padding:5px 7px;border-radius:5px;background:#020617;color:#6b7280;font-size:9px;line-height:1.4;border:1px dashed #1e293b44;margin-top:6px}
+</style>
+
+<style>
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#020617}
+::-webkit-scrollbar-thumb{background:#334155;border-radius:2px}
+</style>
 <script>
-// ── 데이터 ──
+// ══════════════════════════════════════════════════════════════
+// K-AFAS v0.4.1 INLINE MOCK DATA (외부 의존성 0)
+// 금지: Kill Chain, 사격제원, 탄도, NLOS, Autonomous Fire
+// ══════════════════════════════════════════════════════════════
+const SCENARIOS={CLEAN:{label:"정상망(Clean)",color:"#22c55e",mean:14.2,median:12.8,success:96.2},DEGRADED:{label:"저하망(Degraded)",color:"#eab308",mean:32.5,median:28.1,success:78.4},CONTESTED:{label:"경합망(Contested)",color:"#ef4444",mean:58.9,median:52.3,success:54.1}};
+const STAGES=[{key:"SENSOR_INGEST",label:"센서수집",color:"#38bdf8",mean:2.1},{key:"AI_CANDIDATE",label:"AI후보",color:"#a78bfa",mean:3.4},{key:"QUALITY_CHECK",label:"품질검증",color:"#34d399",mean:1.8},{key:"REVIEW_PACKAGE",label:"검토패키지",color:"#fbbf24",mean:4.2},{key:"HUMAN_REVIEW",label:"인간검토",color:"#fb7185",mean:8.5},{key:"AUDIT_SYNC",label:"감사동기",color:"#14b8a6",mean:1.2}];
+const LAYERS=["지형","교통망","아군위치","표적후보","증거마커","신선도","좌표품질","제한구역","위험지역","검토범위","연동상태","상호운용","민간밀도","기상","감사추적"];
+const LAYER_ON=[1,1,1,1,0,1,1,1,0,0,1,0,0,0,0];
 const CASES=[
-  {id:"TGT-001",gate:"PASS",civ:"LOW",fri:"LOW",ttrr:12.4,rec:"REVIEW_REQUIRED",status:"HALTED@awaiting_human_review",x:55,y:30,scenario:"CLEAN"},
-  {id:"TGT-002",gate:"HOLD",civ:"MEDIUM",fri:"LOW",ttrr:28.7,rec:"HOLD",status:"HALTED@awaiting_human_review",x:40,y:45,scenario:"DEGRADED"},
-  {id:"TGT-003",gate:"REJECT",civ:"HIGH",fri:"MEDIUM",ttrr:5.1,rec:"REJECT",status:"REJECTED",x:70,y:55,scenario:"CONTESTED"},
-  {id:"TGT-004",gate:"PASS",civ:"LOW",fri:"LOW",ttrr:15.2,rec:"REVIEW_REQUIRED",status:"HALTED@awaiting_human_review",x:80,y:35,scenario:"CLEAN"},
-  {id:"TGT-005",gate:"HOLD",civ:"MEDIUM",fri:"MEDIUM",ttrr:42.8,rec:"HOLD",status:"HALTED@awaiting_human_review",x:30,y:70,scenario:"DEGRADED"},
+{id:"TGT-001",gate:"PASS",scenario:"CLEAN",civ:"LOW",fri:"LOW",ttrr:12.4,x:55,y:28,threat:"MEDIUM",pScore:6.2,rec:"VALIDATE_REVIEW_PACKAGE"},
+{id:"TGT-002",gate:"HOLD",scenario:"DEGRADED",civ:"MEDIUM",fri:"LOW",ttrr:28.7,x:38,y:42,threat:"HIGH",pScore:7.6,rec:"MORE_EVIDENCE"},
+{id:"TGT-003",gate:"REJECT",scenario:"CONTESTED",civ:"HIGH",fri:"MEDIUM",ttrr:5.1,x:72,y:55,threat:"LOW",pScore:4.1,rec:"REJECT"},
+{id:"TGT-004",gate:"PASS",scenario:"CLEAN",civ:"LOW",fri:"LOW",ttrr:15.2,x:80,y:32,threat:"CRITICAL",pScore:8.9,rec:"VALIDATE_REVIEW_PACKAGE"},
+{id:"TGT-005",gate:"HOLD",scenario:"DEGRADED",civ:"MEDIUM",fri:"MEDIUM",ttrr:42.8,x:28,y:68,threat:"MEDIUM",pScore:5.7,rec:"HOLD"}
 ];
 
-const EVIDENCE={
-  "TGT-001":[{icon:"📹",src:"RQ-101 UAV",type:"uav_video",time:"14:32",fresh:"#009E73",conf:85},{icon:"📡",src:"전자전대대",type:"sigint",time:"14:28",fresh:"#009E73",conf:72},{icon:"👤",src:"GOP 관측소",type:"humint",time:"14:15",fresh:"#F0E442",conf:60}],
-  "TGT-002":[{icon:"🛰️",src:"정찰위성",type:"satellite",time:"13:45",fresh:"#F0E442",conf:68}],
-  "TGT-003":[{icon:"📹",src:"KUS-FS UAV",type:"uav_video",time:"12:10",fresh:"#D55E00",conf:45}],
-  "TGT-004":[{icon:"📡",src:"합참 신호정보",type:"sigint",time:"14:40",fresh:"#009E73",conf:90},{icon:"📹",src:"소형 UAV",type:"uav_video",time:"14:38",fresh:"#009E73",conf:82}],
-  "TGT-005":[{icon:"👤",src:"첩보원 보고",type:"humint",time:"11:30",fresh:"#D55E00",conf:40}],
+const SENSORS={
+"TGT-001":{primary:[{id:"s1",type:"UAV",name:"정찰 UAV #12",q:8.2,conf:.91,time:"14:32",color:"#22c55e"},{id:"s2",type:"RADAR",name:"대포병레이더 A-01",q:7.8,conf:.87,time:"14:30",color:"#3b82f6"}],secondary:[{id:"s3",type:"SAT",name:"위성 IR #03",q:6.4,conf:.76,time:"14:25",color:"#f97316"}]},
+"TGT-002":{primary:[{id:"s4",type:"SAT",name:"정찰위성 #07",q:6.8,conf:.78,time:"13:45",color:"#f97316"}],secondary:[{id:"s5",type:"GROUND",name:"전방관측소 B",q:5.9,conf:.68,time:"13:30",color:"#10b981"}]},
+"TGT-003":{primary:[{id:"s6",type:"UAV",name:"KUS-FS UAV",q:5.2,conf:.52,time:"12:10",color:"#22c55e"}],secondary:[]},
+"TGT-004":{primary:[{id:"s7",type:"UAV",name:"정찰 UAV #21",q:8.7,conf:.93,time:"14:40",color:"#22c55e"},{id:"s8",type:"RADAR",name:"대포병레이더 A-03",q:8.2,conf:.90,time:"14:38",color:"#3b82f6"}],secondary:[{id:"s9",type:"SAT",name:"위성 IR #03",q:6.4,conf:.76,time:"14:35",color:"#f97316"},{id:"s10",type:"GROUND",name:"전방관측소 C",q:6.8,conf:.80,time:"14:30",color:"#10b981"}]},
+"TGT-005":{primary:[{id:"s11",type:"HUMINT",name:"첩보원 보고",q:4.8,conf:.52,time:"11:30",color:"#ec4899"}],secondary:[]}
 };
-
-const SCENARIOS={
-  CLEAN:{label:"정상망(Clean)",cls:"scenario-clean",mean:14.2,median:12.8,success:96.2},
-  DEGRADED:{label:"저하망(Degraded)",cls:"scenario-degraded",mean:32.5,median:28.1,success:78.4},
-  CONTESTED:{label:"경합망(Contested)",cls:"scenario-contested",mean:58.9,median:52.3,success:54.1},
+const HINTS={
+"TGT-001":[{type:"VALIDATE_REVIEW_PACKAGE",rec:true,reason:"P>=6.0, Q>=7.5, 민간위험 LOW, 다중출처 확인"},{type:"HOLD",rec:false,reason:"추가 위성확인 가능 시 대기"}],
+"TGT-002":[{type:"MORE_EVIDENCE",rec:true,reason:"단일출처, 신뢰도 보강 필요"},{type:"HOLD",rec:false,reason:"시간경과 확인"}],
+"TGT-003":[{type:"REJECT",rec:true,reason:"민간위험 HIGH, 증거부족, 정보만료"},{type:"MORE_EVIDENCE",rec:false,reason:"재수집 후 재평가"}],
+"TGT-004":[{type:"VALIDATE_REVIEW_PACKAGE",rec:true,reason:"P>=8.0, Q>=8.0, 민간위험 LOW, 증거패킷 다중출처 확인"},{type:"MORE_EVIDENCE",rec:false,reason:"인접 지역 추가확인 권고"}],
+"TGT-005":[{type:"HOLD",rec:true,reason:"중간위험, 추가정보 대기"},{type:"REJECT",rec:false,reason:"정보만료 시"}]
 };
-
-const STAGES=[
-  {stage:"SENSOR",mean:2.1,color:"#38bdf8"},
-  {stage:"AI",mean:3.4,color:"#a78bfa"},
-  {stage:"TRACK",mean:1.8,color:"#34d399"},
-  {stage:"REVIEW_PACKAGE",mean:4.2,color:"#fbbf24"},
-  {stage:"HITL",mean:8.5,color:"#fb7185"},
-  {stage:"LINK",mean:1.2,color:"#94a3b8"},
-];
-const STAGE_LABELS={SENSOR:"센서",AI:"AI분석",TRACK:"트랙품질",REVIEW_PACKAGE:"검토패키지",HITL:"인간검토",LINK:"연동상태"};
-
-const LAYERS=["지형","교통망","수계","민간거주","제한구역","아군위치","충돌영역","적위험도","표적후보","증거마커","신선도","좌표품질","게이트결과","검토대기열","감사추적"];
-const LAYER_ON=[1,1,0,1,1,1,1,1,1,0,1,1,1,1,0];
-
 let selected=CASES[0];
 let layerState=[...LAYER_ON];
+const GATE_COLOR={PASS:"#22c55e",HOLD:"#eab308",REJECT:"#ef4444"};
+const THREAT_COLOR={LOW:"#22c55e",MEDIUM:"#eab308",HIGH:"#fb7185",CRITICAL:"#f97316"};
 
-// ── 렌더 ──
-function renderLayers(){
-  document.getElementById("layerBar").innerHTML=LAYERS.map((l,i)=>`<span class="chip ${layerState[i]?'on':'off'}" onclick="layerState[${i}]=!layerState[${i}];renderLayers()">${l}</span>`).join("");
+// ══════════════════════════════════════════════════════════════
+// RENDER FUNCTIONS
+// ══════════════════════════════════════════════════════════════
+function render(){
+const m=document.getElementById("mainGrid");
+m.innerHTML=`<section class="left-panel">${renderLeftPanel()}</section><div class="right-panel">${renderMetrics()}${renderSensors()}${renderDecision()}</div>`;
+attachEvents();
 }
 
-function renderMarkers(){
-  const a=document.getElementById("mapArea");
-  a.querySelectorAll(".marker").forEach(m=>m.remove());
-  CASES.forEach(c=>{
-    const m=document.createElement("div");
-    m.className=`marker ${c.gate.toLowerCase()} ${c.id===selected.id?'selected':''}`;
-    m.style.left=c.x+"%"; m.style.top=c.y+"%";
-    m.innerHTML=`<span class="marker-label">${c.id}</span>`;
-    m.onclick=()=>selectCase(c);
-    a.appendChild(m);
-  });
-}
-
-function renderTgtList(){
-  document.getElementById("tgtList").innerHTML=CASES.map((c,i)=>`<button class="tgt-btn ${c.id===selected.id?'active':'inactive'}" onclick="selectCase(CASES[${i}])">${c.id}</button>`).join("");
-}
-
-function selectCase(c){ selected=c; renderAll(); }
-
-function renderCoordBar(){
-  document.getElementById("selId").textContent=selected.id;
-  const g=document.getElementById("selGate");
-  g.textContent=selected.gate;
-  g.style.color=selected.gate==="PASS"?"#22c55e":selected.gate==="HOLD"?"#eab308":"#ef4444";
-  document.getElementById("selCiv").textContent="민간:"+selected.civ;
-  document.getElementById("selFri").textContent="아군:"+selected.fri;
+function renderLeftPanel(){
+const chips=LAYERS.map((l,i)=>`<span class="chip ${layerState[i]?'on':'off'}" data-li="${i}">${l}</span>`).join("");
+const markers=CASES.map(c=>{
+const s=c.id===selected.id?'sel':'';
+return`<div class="marker ${s}" data-tid="${c.id}" style="left:${c.x}%;top:${c.y}%;background:${GATE_COLOR[c.gate]};box-shadow:0 0 8px ${GATE_COLOR[c.gate]}55"><span class="marker-lbl">${c.id}</span></div>`;
+}).join("");
+const tgts=CASES.map(c=>`<button class="tgt-btn ${c.id===selected.id?'active':'inactive'}" data-tid="${c.id}">${c.id}</button>`).join("");
+return`<div class="map-toolbar"><span>지도/지형 패널 (3D · SVG)</span><span style="font-size:9px">DISPLAY_ONLY · 좌표복사차단</span></div>
+<div class="layers">${chips}</div>
+<div class="map-area"><svg class="map-svg" width="100%" height="100%"><defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="#1e293b" stroke-width=".5"/></pattern></defs><rect width="100%" height="100%" fill="url(#g)"/></svg>${markers}</div>
+<div class="coord-bar"><span style="font-weight:700;color:#e5e7eb">${selected.id}</span><span style="color:${GATE_COLOR[selected.gate]};font-weight:600">${selected.gate}</span><span>민간:${selected.civ}</span><span>아군:${selected.fri}</span><span style="color:#475569">DISPLAY_ONLY</span></div>
+<div class="tgt-list">${tgts}</div>`;
 }
 
 function renderMetrics(){
-  const sc=SCENARIOS[selected.scenario];
-  const badge=document.getElementById("scenarioBadge");
-  badge.textContent=sc.label;
-  badge.className="scenario-badge "+sc.cls;
+const sc=SCENARIOS[selected.scenario];
+const stageTotal=STAGES.reduce((s,st)=>s+st.mean,0);
+const scenBars=Object.entries(SCENARIOS).map(([k,v])=>{
+const active=k===selected.scenario?' style="color:#e5e7eb;font-weight:600"':'';
+return`<div class="bar-row"><span${active}>${v.label}</span><div class="bar-track"><div class="bar-fill" style="width:${v.success}%;background:${v.color}"></div></div><span class="bar-val" style="color:${v.color}">${v.success}%</span></div>`;
+}).join("");
+const stackSegs=STAGES.map(st=>{
+const w=Math.max((st.mean/stageTotal)*100,5);
+return`<div class="stk-seg" style="width:${w}%;background:${st.color}" title="${st.label} ${st.mean}s">${st.key.slice(0,3)}</div>`;
+}).join("");
+const legend=STAGES.map(st=>`<div class="leg-item"><span class="leg-dot" style="background:${st.color}"></span><span>${st.label}</span><strong>${st.mean.toFixed(1)}s</strong></div>`).join("");
 
-  const stageTotal=STAGES.reduce((s,st)=>s+st.mean,0);
-  const ttsr=selected.ttrr;
-
-  let html=`
-    <div class="metrics-grid">
-      <div class="metric-card primary"><span class="metric-label">TTSR</span><strong>${ttsr.toFixed(1)}s</strong><small>첩보→검토준비</small></div>
-      <div class="metric-card"><span class="metric-label">성공률</span><strong>${sc.success}%</strong><small>${sc.label} 기준</small></div>
-      <div class="metric-card"><span class="metric-label">평균지연</span><strong>${sc.mean.toFixed(1)}s</strong><small>검토흐름 평균</small></div>
-    </div>
-    <div class="chart-block" style="margin-top:8px">
-      <div class="chart-title">시나리오별 성공률</div>
-      <div class="success-bars">`;
-  Object.entries(SCENARIOS).forEach(([k,v])=>{
-    const barColor=k==="CLEAN"?"#22c55e":k==="DEGRADED"?"#eab308":"#ef4444";
-    html+=`<div class="bar-row"><span class="bar-label">${v.label}</span><div class="bar-track"><div class="bar-fill" style="width:${v.success}%;background:${barColor}"></div></div><span class="bar-val" style="color:${barColor}">${v.success}%</span></div>`;
-  });
-  html+=`</div></div>
-    <div class="chart-block" style="margin-top:8px">
-      <div class="chart-title">검토흐름 단계별 지연</div>
-      <div class="stage-stack">`;
-  STAGES.forEach(st=>{
-    const w=Math.max((st.mean/stageTotal)*100,5);
-    html+=`<div class="stage-seg stage-${st.stage}" style="width:${w}%" title="${STAGE_LABELS[st.stage]} ${st.mean}s">${st.stage.slice(0,3)}</div>`;
-  });
-  html+=`</div><div class="stage-legend">`;
-  STAGES.forEach(st=>{
-    html+=`<div class="legend-item"><span class="legend-dot" style="background:${st.color}"></span><span>${STAGE_LABELS[st.stage]}</span><strong>${st.mean.toFixed(1)}s</strong></div>`;
-  });
-  html+=`</div></div>
-    <div class="safety-note" style="margin-top:8px">표시전용(DISPLAY_ONLY): 자동사격·사격제원·탄도계산 수행 없음. 인간검토(HITL) 필수.</div>`;
-  document.getElementById("metricsBody").innerHTML=html;
+return`<section class="panel"><div class="ph"><span>인간승인형 검토흐름 지표</span><span class="badge" style="color:${sc.color};border-color:${sc.color}44">${sc.label}</span></div><div class="pb">
+<div class="m-grid">
+<div class="m-card primary"><div class="m-label">TTSR</div><div class="m-val">${selected.ttrr.toFixed(1)}s</div><div class="m-hint">첩보→검토준비 시간</div></div>
+<div class="m-card"><div class="m-label">성공률</div><div class="m-val">${sc.success}%</div><div class="m-hint">${sc.label} 기준</div></div>
+<div class="m-card"><div class="m-label">평균지연</div><div class="m-val">${sc.mean.toFixed(1)}s</div><div class="m-hint">검토흐름 평균</div></div>
+</div>
+<div class="chart-blk"><div class="chart-title">시나리오별 성공률</div>${scenBars}</div>
+<div class="chart-blk"><div class="chart-title">인간승인형 검토흐름 단계별 지연</div><div class="stk-bar">${stackSegs}</div><div class="stk-legend">${legend}</div></div>
+<div class="safety-note">표시전용(DISPLAY_ONLY): 본 패널은 시뮬레이션·검토지표만 표시하며 자동사격(Autonomous Fire), 사격제원(Firing Data), 탄도계산(Ballistic Calculation)을 수행하지 않습니다.</div>
+</div></section>`;
 }
 
-function renderEvidence(){
-  const evis=EVIDENCE[selected.id]||[];
-  document.getElementById("eviCount").textContent=evis.length+"건";
-  document.getElementById("eviBody").innerHTML=evis.map(e=>`<div class="evi-card"><span class="evi-icon">${e.icon}</span><div class="evi-info"><div class="evi-title">${e.src}</div><div class="evi-meta">${e.type} · ${e.time} KST · 신뢰도 ${e.conf}%</div></div><span class="freshness-dot" style="background:${e.fresh}"></span></div>`).join("");
+function renderSensors(){
+const data=SENSORS[selected.id]||{primary:[],secondary:[]};
+function card(s,compact){
+const chipCls=s.q>=8?'s-chip-good':s.q>=6?'s-chip-warn':'s-chip-bad';
+return`<div class="s-card${compact?' compact':''}"><div style="display:flex;align-items:center;justify-content:center"><div class="s-icon" style="background:${s.color}"></div></div><div><div style="display:flex;justify-content:space-between;align-items:center"><span class="s-name">${s.name}</span><span class="s-chip ${chipCls}">Q${s.q.toFixed(1)}</span></div><div class="s-meta"><span style="color:#93c5fd">${s.type}</span><span>갱신 ${s.time}</span><span style="color:#a5b4fc">신뢰도 ${(s.conf*100).toFixed(0)}%</span></div></div></div>`;
+}
+const pCards=data.primary.map(s=>card(s,false)).join("");
+const sCards=data.secondary.length?data.secondary.map(s=>card(s,true)).join(""):'<div style="font-size:9px;color:#6b7280">보조 센서 없음</div>';
+return`<section class="panel"><div class="ph"><span>센서/정보원</span><span style="font-size:9px;color:#6b7280">주 ${data.primary.length} · 보조 ${data.secondary.length}</span></div><div class="pb">
+<div class="sensor-cols"><div><div class="sensor-col-title">주 센서</div>${pCards}</div><div><div class="sensor-col-title">보조 센서</div>${sCards}</div></div>
+</div></section>`;
 }
 
 function renderDecision(){
-  document.getElementById("decStatus").textContent=selected.id+" · "+selected.status;
-  const dis=selected.status==="REJECTED";
-  document.getElementById("decBody").innerHTML=`
-    <div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:6px"><span>게이트: <b style="color:${selected.gate==='PASS'?'#22c55e':selected.gate==='HOLD'?'#eab308':'#ef4444'}">${selected.gate}</b></span><span>추천: <b>${selected.rec}</b></span></div>
-    <textarea placeholder="결정 사유 입력 (필수)..." style="width:100%;height:32px;resize:none;background:#0f172a;border:1px solid #334155;border-radius:4px;padding:5px 7px;color:#e2e8f0;font-size:10px;margin-bottom:6px"></textarea>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px">
-      <button class="btn btn-more" onclick="doAction('추가증거요청')">추가증거요청</button>
-      <button class="btn btn-hold" onclick="doAction('보류')">보류</button>
-      <button class="btn btn-reject" ${dis?'disabled':''} onclick="doAction('거부')">거부</button>
-      <button class="btn btn-approve" ${dis?'disabled':''} onclick="doAction('다음검토 승인')">다음검토 승인</button>
-    </div>
-    <div style="margin-top:6px;font-size:9px;color:#475569;border-top:1px solid #1e293b;padding-top:5px">⚠ 의사결정 <b>지원</b>만 제공. 최종 결정은 인가된 인간 지휘관 권한.</div>`;
+const hints=HINTS[selected.id]||[];
+const DEC_LABEL={VALIDATE_REVIEW_PACKAGE:"검토패키지 검증",HOLD:"보류",REJECT:"반려",MORE_EVIDENCE:"추가증거 요청"};
+const hintHtml=hints.map(h=>`<div class="dec-hint${h.rec?' rec':''}"><span class="dec-hint-type">${DEC_LABEL[h.type]||h.type}</span><span class="dec-hint-reason">${h.reason}</span>${h.rec?'<span class="dec-hint-badge">추천</span>':''}</div>`).join("");
+const isRejected=selected.gate==="REJECT";
+return`<section class="panel"><div class="ph"><span>의사결정 지원</span><span style="font-size:9px;color:#6b7280">${selected.id} · P=${selected.pScore}</span></div><div class="pb">
+<div class="dec-hints">${hintHtml}</div>
+<div class="dec-btns">
+<button class="dec-btn dec-btn-validate" data-dec="VALIDATE_REVIEW_PACKAGE" ${isRejected?'disabled':''}>검토패키지 검증</button>
+<button class="dec-btn dec-btn-hold" data-dec="HOLD">보류</button>
+<button class="dec-btn dec-btn-reject" data-dec="REJECT" ${isRejected?'disabled':''}>반려</button>
+<button class="dec-btn dec-btn-more" data-dec="MORE_EVIDENCE">추가증거 요청</button>
+</div>
+<div class="dec-note">⚠ DISPLAY_ONLY 모드: 실제 조치 명령은 전송되지 않습니다. 최종 결정은 인가된 인간 권한자의 고유 권한입니다.<br>VALIDATED 이후 K-AFAS 책임 종료. 후속 조치는 외부 인가 시스템에서 인간 권한자가 별도 수행.</div>
+</div></section>`;
 }
 
-function doAction(a){
-  const ta=document.querySelector("#decBody textarea");
-  if(!ta||!ta.value.trim()){alert("결정 사유를 입력하세요.");return;}
-  alert(`[${selected.id}] ${a} 완료\n사유: ${ta.value}`);
-  ta.value="";
+function attachEvents(){
+// 레이어 토글
+document.querySelectorAll(".chip").forEach(el=>{
+el.onclick=()=>{const i=+el.dataset.li;layerState[i]=!layerState[i];render();}
+});
+// 마커 클릭
+document.querySelectorAll(".marker").forEach(el=>{
+el.onclick=()=>{selected=CASES.find(c=>c.id===el.dataset.tid)||selected;render();}
+});
+// 타겟 버튼
+document.querySelectorAll(".tgt-btn").forEach(el=>{
+el.onclick=()=>{selected=CASES.find(c=>c.id===el.dataset.tid)||selected;render();}
+});
+// 의사결정 버튼
+document.querySelectorAll(".dec-btn").forEach(el=>{
+el.onclick=()=>{
+if(el.disabled)return;
+alert(`[${selected.id}] ${el.dataset.dec} 처리 완료 (DISPLAY_ONLY: 실제 전송 없음)`);
+};
+});
 }
 
-function renderAll(){
-  renderMarkers(); renderTgtList(); renderCoordBar();
-  renderMetrics(); renderEvidence(); renderDecision();
-}
-
-// ── 잠금 타이머 ──
+// ── 세션 잠금 타이머 ──
 let lockSec=299;
 setInterval(()=>{
-  lockSec=Math.max(0,lockSec-1);
-  const el=document.getElementById("lockTimer");
-  el.textContent=`잠금 ${Math.floor(lockSec/60)}:${String(lockSec%60).padStart(2,"0")}`;
-  el.style.color=lockSec<60?"#ef4444":"#64748b";
+lockSec=Math.max(0,lockSec-1);
+const el=document.getElementById("lockTimer");
+el.textContent=`잠금 ${Math.floor(lockSec/60)}:${String(lockSec%60).padStart(2,"0")}`;
+el.style.color=lockSec<60?"#ef4444":"#6b7280";
 },1000);
 document.addEventListener("mousemove",()=>{lockSec=299;});
 document.addEventListener("keydown",()=>{lockSec=299;});
 
-// 클립보드 차단
-document.addEventListener("copy",e=>{e.preventDefault();});
+// ── DISPLAY_ONLY 보안: 복사/우클릭/드래그 차단 ──
+document.addEventListener("copy",e=>e.preventDefault());
+document.addEventListener("cut",e=>e.preventDefault());
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("dragstart",e=>e.preventDefault());
+document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="c")e.preventDefault();});
 
-// 초기화
-renderLayers(); renderAll();
+// ── 초기 렌더 ──
+render();
 </script>
 </body>
 </html>
