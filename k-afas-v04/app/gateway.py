@@ -99,6 +99,16 @@ class ReviewRequest(BaseModel):
     decision: str
     decision_reason: str
 
+    def normalized_decision(self) -> str:
+        """프론트(lower) → 백엔드(UPPER) 정규화."""
+        mapping = {
+            "request_more_evidence": "REQUEST_MORE_EVIDENCE",
+            "hold": "HOLD",
+            "reject": "REJECT",
+            "approve_for_next_review": "APPROVE_FOR_NEXT_REVIEW",
+        }
+        return mapping.get(self.decision.lower(), self.decision.upper())
+
 
 class CaseResponse(BaseModel):
     """응답 — weapon 관련 필드 제외."""
@@ -195,23 +205,28 @@ async def submit_review(
     req: ReviewRequest,
     role: str = Depends(_verify_token),
 ):
-    """인간검토 제출. 파이프라인을 인간결정 포함하여 재실행."""
+    """인간검토 제출. 원본 케이스 파라미터 보존 + 정규화된 결정값."""
     entry = _cases.get(candidate_id)
     if not entry:
         raise HTTPException(404, "case_not_found")
 
-    # 원본 raw 데이터로 재실행 + human_decision 포함
+    # 원본 결과에서 파라미터 복원 (감사 재현성 보장)
     orig = entry["result"]
-    raw = orig.case.get("candidate", {})
+    orig_case = orig.case
+    raw_candidate = orig_case.get("candidate", {})
+    raw_evidence = orig_case.get("evidence", {})
+    raw_coord = orig_case.get("coord", {})
+
     result = _pipeline.run(
-        raw={"observed_at_kst": raw.get("observed_at_kst", ""),
-             "confidence_score": 0.8},
-        source_type=raw.get("source_type", "uav_video"),
-        cep_meters=50.0,
-        evidence_count=2,
-        source_diversity="MULTI_SOURCE",
-        analyst_summary="reviewed",
-        human_decision=(req.reviewer_role, req.decision, req.decision_reason),
+        raw={"observed_at_kst": raw_candidate.get("observed_at_kst", ""),
+             "confidence_score": raw_candidate.get("confidence_score", 0.5),
+             "classification": raw_candidate.get("classification", "unknown")},
+        source_type=raw_candidate.get("source_type", "uav_video"),
+        cep_meters=raw_coord.get("cep_meters", 50.0),
+        evidence_count=raw_evidence.get("evidence_count", 1),
+        source_diversity=raw_evidence.get("source_diversity", "SINGLE_SOURCE"),
+        analyst_summary=raw_evidence.get("analyst_summary", ""),
+        human_decision=(req.reviewer_role, req.normalized_decision(), req.decision_reason),
     )
     _cases[candidate_id] = {"result": result, "role": role}
     return _to_response(result)
@@ -222,6 +237,22 @@ async def verify_audit(role: str = Depends(_verify_token)):
     """감사로그 해시체인 무결성 검증."""
     ok, reason = verify_audit_chain(_pipeline.audit_path)
     return {"chain_ok": ok, "reason": reason}
+
+
+@app.post("/api/v1/cases/{candidate_id}/aar")
+async def submit_aar(
+    candidate_id: str,
+    req: dict,
+    role: str = Depends(_verify_token),
+):
+    """사후평가(AAR) 제출. 운용 사이클 완결."""
+    entry = _cases.get(candidate_id)
+    if not entry:
+        raise HTTPException(404, "case_not_found")
+
+    outcome = req.get("outcome", "UNKNOWN")
+    aar = _pipeline.submit_aar(entry["result"].case, outcome)
+    return {"candidate_id": candidate_id, "aar": aar, "status": "AAR_RECORDED"}
 
 
 @app.websocket("/ws/cases")

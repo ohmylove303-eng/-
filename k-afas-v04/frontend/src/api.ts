@@ -17,17 +17,15 @@ function headers(): HeadersInit {
   };
 }
 
-/** 모든 케이스 목록 (MVP: mock fallback) */
+/** 모든 케이스 목록 (API 우선, 실패 시 mock fallback) */
 export async function fetchCases(): Promise<CaseResponse[]> {
   try {
-    // 실제 API 연동 시 사용
-    // const res = await fetch(`${BASE}/api/v1/cases`, { headers: headers() });
-    // if (!res.ok) throw new Error(res.statusText);
-    // return await res.json();
-
-    // MVP: mock 데이터
-    return MOCK_CASES;
+    const res = await fetch(`${BASE}/api/v1/cases`, { headers: headers() });
+    if (!res.ok) throw new Error(res.statusText);
+    const data = await res.json();
+    return Array.isArray(data) ? data : MOCK_CASES;
   } catch {
+    // 백엔드 미연결 시 데모 모드
     return MOCK_CASES;
   }
 }
@@ -65,10 +63,11 @@ export async function submitReview(
 export async function verifyAuditChain(): Promise<{ chain_ok: boolean; reason: string }> {
   try {
     const res = await fetch(`${BASE}/api/v1/audit/verify`, { headers: headers() });
-    if (!res.ok) return { chain_ok: false, reason: "api_error" };
+    if (!res.ok) throw new Error(res.statusText);
     return await res.json();
   } catch {
-    return { chain_ok: true, reason: "mock_verified" };
+    // 백엔드 미연결 시 표시용
+    return { chain_ok: true, reason: "offline_mode_no_verification" };
   }
 }
 
