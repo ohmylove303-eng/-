@@ -1,6 +1,6 @@
-# K-AFAS v0.4.1 — 원클릭 실행 (FastAPI + React)
+# K-AFAS v0.4.1 — 원클릭 실행 (FastAPI + React + CesiumJS)
 # 사용법: docker-compose up --build
-# 접속: http://localhost:3000
+# 접속: http://localhost:3000 (프론트) / http://localhost:8000/docs (API)
 
 services:
   backend:
@@ -26,10 +26,12 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_CESIUM_TOKEN: ${CESIUM_ION_TOKEN:-}
     ports:
       - "3000:3000"
-    environment:
-      - VITE_CESIUM_TOKEN=${CESIUM_ION_TOKEN:-}
     depends_on:
       backend:
         condition: service_healthy
+    environment:
+      - NODE_ENV=production
