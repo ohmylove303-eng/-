@@ -233,8 +233,9 @@ class KAFASPipeline:
         )
         case["review"] = review
 
-        # 하네스 2차 검증 (인간승인 포함)
-        report2 = evaluate_case(case, text_corpus=decision.get("reason", ""))
+        # 하네스 2차 검증 (인간승인 포함 — decision_reason도 금지표현 검사)
+        review_text = f"{decision.get('reason', '')} {reason}"
+        report2 = evaluate_case(case, text_corpus=review_text)
         result.harness = report2
 
         # AAR은 운용 사이클 후속 단계에서 입력 (여기서는 placeholder)
