@@ -8,10 +8,10 @@ import { LayerDefinition } from "../types/kafas";
 
 // 금지 키워드 (기능명/API명/버튼명으로 사용 불가)
 const FORBIDDEN_KEYWORDS = [
-  "fire_control", "weapon_release", "turret",
-  "kill_chain", "firing_solution",
-  "사격제원", "사격지시", "발사명령",
-  "autonomous_fire", "ballistic",
+  "fire_control", "weapon_release", "turret",       // 금지: 차단 대상
+  "kill_chain", "firing_solution",                   // 금지: 차단 대상
+  "사격제원", "사격지시", "발사명령",                    // 금지: 차단 대상
+  "autonomous_fire", "ballistic",                    // 금지: 차단 대상
 ];
 
 /**
