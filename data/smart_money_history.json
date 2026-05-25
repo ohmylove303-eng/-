@@ -11968,5 +11968,100 @@
       }
     ],
     "saved_at": "2026-05-24T10:48:36.525659"
+  },
+  "2026-05-25": {
+    "recommendations": [
+      {
+        "ticker": "GEN",
+        "name": "Gen Digital Inc.",
+        "recommended_price": 24.82,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc.",
+        "recommended_price": 234.81,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 141.22,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "CSCO",
+        "name": "Cisco Systems, Inc.",
+        "recommended_price": 120.41,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "AMT",
+        "name": "American Tower Corporation",
+        "recommended_price": 183.85,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "recommended_price": 177.69,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "NTAP",
+        "name": "NetApp, Inc.",
+        "recommended_price": 139.36,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "MPC",
+        "name": "Marathon Petroleum Corporation",
+        "recommended_price": 254.65,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "FICO",
+        "name": "Fair Isaac Corporation",
+        "recommended_price": 1239.91,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      },
+      {
+        "ticker": "ADSK",
+        "name": "Autodesk, Inc.",
+        "recommended_price": 240.99,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-05-25"
+      }
+    ],
+    "saved_at": "2026-05-25T12:40:16.401500"
   }
 }
