@@ -1,13 +1,5 @@
 {
-  "timestamp": "2026-06-01T15:30:40.615279",
-  "candidates": [
-    {
-      "ticker": "AMD",
-      "price": 516.59,
-      "from_52w_high": -0.29,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 1
+  "timestamp": "2026-06-01T23:36:09.115682",
+  "candidates": [],
+  "count": 0
 }
