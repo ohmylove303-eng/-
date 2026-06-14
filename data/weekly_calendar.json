@@ -1,8 +1,8 @@
 {
-  "updated": "2026-06-13T23:01:51.748678",
+  "updated": "2026-06-14T23:05:59.375737",
   "events": [
     {
-      "date": "2026-06-13",
+      "date": "2026-06-14",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
@@ -17,7 +17,7 @@
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-07-04"
+      "date": "2026-07-05"
     },
     {
       "event": "CPI Release",
