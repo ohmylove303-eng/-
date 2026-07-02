@@ -1,27 +1,6 @@
 {
-  "timestamp": "2026-07-02T11:42:16.174202",
-  "earnings": [
-    {
-      "ticker": "TSLA",
-      "date": "2026-07-22",
-      "days_left": 20
-    },
-    {
-      "ticker": "MSFT",
-      "date": "2026-07-29",
-      "days_left": 27
-    },
-    {
-      "ticker": "AAPL",
-      "date": "2026-07-30",
-      "days_left": 28
-    },
-    {
-      "ticker": "NVDA",
-      "date": "2026-08-26",
-      "days_left": 55
-    }
-  ],
+  "timestamp": "2026-07-02T23:03:56.072503",
+  "earnings": [],
   "news": [
     {
       "ticker": "NVDA",
