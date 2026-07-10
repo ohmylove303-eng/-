@@ -1,14 +1,3 @@
 {
-  "timestamp": "2026-07-09T23:12:39.689252",
-  "period": "5d",
-  "sectors": [
-    {
-      "ticker": "XLE",
-      "name": "Energy",
-      "color": "#FF6347",
-      "price": 54.82,
-      "change_1d": -1.4,
-      "change_period": 3.01
-    }
-  ]
+  "error": "No data"
 }
