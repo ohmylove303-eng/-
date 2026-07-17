@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T23:02:17.371985",
+  "timestamp": "2026-07-17T22:45:10.723600",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -186,31 +186,31 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "143",
+          "date": "144",
           "insider": "KIMMITT ROBERT M",
           "type": "Sell",
           "value": 364709.0
         },
         {
-          "date": "142",
+          "date": "143",
           "insider": "BOSWORTH ANDREW",
           "type": "Sell",
           "value": 13018081.0
         },
         {
-          "date": "141",
+          "date": "142",
           "insider": "NEWSTEAD JENNIFER",
           "type": "Sell",
           "value": 402225.0
         },
         {
-          "date": "140",
+          "date": "141",
           "insider": "LI SUSAN J.",
           "type": "Sell",
           "value": 19395767.0
         },
         {
-          "date": "139",
+          "date": "140",
           "insider": "OLIVAN JAVIER",
           "type": "Sell",
           "value": 2443599.0
@@ -294,24 +294,6 @@
       "sell_count": 9,
       "transactions": [
         {
-          "date": "72",
-          "insider": "VINIAR DAVID A",
-          "type": "Sell",
-          "value": 2512125.0
-        },
-        {
-          "date": "71",
-          "insider": "MONTAG THOMAS K",
-          "type": "Sell",
-          "value": 5050436.0
-        },
-        {
-          "date": "70",
-          "insider": "LEE BRIAN J.",
-          "type": "Sell",
-          "value": 2530070.0
-        },
-        {
           "date": "68",
           "insider": "SOLOMON DAVID M",
           "type": "Sell",
@@ -322,6 +304,24 @@
           "insider": "FLAHERTY MARK A",
           "type": "Buy",
           "value": 29545.0
+        },
+        {
+          "date": "66",
+          "insider": "LEE BRIAN J.",
+          "type": "Sell",
+          "value": 2123758.0
+        },
+        {
+          "date": "64",
+          "insider": "ROGERS JOHN F W",
+          "type": "Sell",
+          "value": 3826245.0
+        },
+        {
+          "date": "63",
+          "insider": "COLEMAN DENIS P.",
+          "type": "Sell",
+          "value": 7667285.0
         }
       ]
     },
