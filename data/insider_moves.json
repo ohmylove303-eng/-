@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-21T22:59:55.721257",
+  "timestamp": "2026-07-22T23:07:20.822174",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -78,7 +78,7 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "96",
+          "date": "97",
           "insider": "DENHOLM ROBYN M",
           "type": "Sell",
           "value": 14597629.0
@@ -90,22 +90,22 @@
           "value": 65867.0
         },
         {
-          "date": "92",
+          "date": "93",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 2000000.0
         },
         {
-          "date": "90",
+          "date": "91",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 1000000.0
         },
         {
-          "date": "87",
-          "insider": "TANEJA VAIBHAV",
+          "date": "89",
+          "insider": "MUSK KIMBAL J",
           "type": "Sell",
-          "value": 1007040.0
+          "value": 15138945.0
         }
       ]
     },
@@ -313,9 +313,9 @@
         },
         {
           "date": "66",
-          "insider": "ROGERS JOHN F W",
+          "insider": "FREDMAN SHEARA J.",
           "type": "Sell",
-          "value": 3826245.0
+          "value": 1768073.0
         },
         {
           "date": "65",
