@@ -1,8 +1,8 @@
 {
-  "updated": "2026-07-22T23:08:09.570505",
+  "updated": "2026-07-23T22:56:15.764469",
   "events": [
     {
-      "date": "2026-07-22",
+      "date": "2026-07-23",
       "event": "Market Open",
       "impact": "Low",
       "description": "Regular trading session"
@@ -23,7 +23,7 @@
       "event": "FOMC Meeting",
       "impact": "High",
       "description": "Fed interest rate decision",
-      "date": "2026-08-12"
+      "date": "2026-08-13"
     },
     {
       "event": "GDP Report",
