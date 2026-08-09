@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-08T22:28:58.142134",
+  "timestamp": "2026-08-09T22:32:24.231163",
   "summary": {
     "total_analyzed": 15,
-    "bullish_count": 12,
-    "bearish_count": 1,
+    "bullish_count": 11,
+    "bearish_count": 3,
     "unusual_count": 15
   },
   "bullish_stocks": [
@@ -14,13 +14,14 @@
     "AMZN",
     "META",
     "GOOGL",
-    "SPY",
     "NFLX",
     "BA",
     "DIS",
     "JPM"
   ],
   "bearish_stocks": [
+    "SPY",
+    "QQQ",
     "GS"
   ],
   "unusual_activity": [
@@ -41,13 +42,13 @@
     },
     {
       "ticker": "MSFT",
-      "unusual_calls": 5,
-      "unusual_puts": 4
+      "unusual_calls": 8,
+      "unusual_puts": 8
     },
     {
       "ticker": "AMZN",
       "unusual_calls": 8,
-      "unusual_puts": 5
+      "unusual_puts": 6
     },
     {
       "ticker": "META",
@@ -61,17 +62,17 @@
     },
     {
       "ticker": "SPY",
-      "unusual_calls": 10,
-      "unusual_puts": 8
+      "unusual_calls": 12,
+      "unusual_puts": 13
     },
     {
       "ticker": "QQQ",
-      "unusual_calls": 9,
-      "unusual_puts": 8
+      "unusual_calls": 11,
+      "unusual_puts": 19
     },
     {
       "ticker": "AMD",
-      "unusual_calls": 10,
+      "unusual_calls": 12,
       "unusual_puts": 8
     },
     {
@@ -86,7 +87,7 @@
     },
     {
       "ticker": "DIS",
-      "unusual_calls": 3,
+      "unusual_calls": 4,
       "unusual_puts": 4
     },
     {
@@ -97,31 +98,10 @@
     {
       "ticker": "GS",
       "unusual_calls": 8,
-      "unusual_puts": 10
+      "unusual_puts": 11
     }
   ],
   "options_flow": [
-    {
-      "ticker": "MSFT",
-      "current_price": 499.99,
-      "signal": {
-        "sentiment": "Bullish",
-        "sentiment_score": 80
-      },
-      "metrics": {
-        "pc_volume_ratio": 0.4,
-        "call_iv": 84.8,
-        "call_volume": 28365,
-        "put_volume": 11397,
-        "total_volume": 39762
-      },
-      "expiration": "2026-08-10",
-      "unusual_activity": {
-        "unusual_calls": 5,
-        "unusual_puts": 4,
-        "has_unusual": true
-      }
-    },
     {
       "ticker": "META",
       "current_price": 592.1,
@@ -130,11 +110,11 @@
         "sentiment_score": 80
       },
       "metrics": {
-        "pc_volume_ratio": 0.47,
-        "call_iv": 82.9,
-        "call_volume": 45382,
-        "put_volume": 21193,
-        "total_volume": 66575
+        "pc_volume_ratio": 0.48,
+        "call_iv": 102.3,
+        "call_volume": 45402,
+        "put_volume": 21687,
+        "total_volume": 67089
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
@@ -144,23 +124,23 @@
       }
     },
     {
-      "ticker": "SPY",
-      "current_price": 773.26,
+      "ticker": "GOOGL",
+      "current_price": 354.3,
       "signal": {
         "sentiment": "Bullish",
         "sentiment_score": 80
       },
       "metrics": {
-        "pc_volume_ratio": 0.47,
-        "call_iv": 26.4,
-        "call_volume": 663075,
-        "put_volume": 308991,
-        "total_volume": 972066
+        "pc_volume_ratio": 0.49,
+        "call_iv": 84.5,
+        "call_volume": 48576,
+        "put_volume": 23995,
+        "total_volume": 72571
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
-        "unusual_calls": 10,
-        "unusual_puts": 8,
+        "unusual_calls": 5,
+        "unusual_puts": 4,
         "has_unusual": true
       }
     },
@@ -173,10 +153,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.44,
-        "call_iv": 49.9,
+        "call_iv": 59.1,
         "call_volume": 128022,
-        "put_volume": 55819,
-        "total_volume": 183841
+        "put_volume": 55989,
+        "total_volume": 184011
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
@@ -193,11 +173,11 @@
         "sentiment_score": 70
       },
       "metrics": {
-        "pc_volume_ratio": 0.5,
-        "call_iv": 121.9,
-        "call_volume": 306150,
-        "put_volume": 153994,
-        "total_volume": 460144
+        "pc_volume_ratio": 0.53,
+        "call_iv": 158.5,
+        "call_volume": 306784,
+        "put_volume": 161161,
+        "total_volume": 467945
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
@@ -215,10 +195,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.52,
-        "call_iv": 93.8,
-        "call_volume": 300633,
-        "put_volume": 156812,
-        "total_volume": 457445
+        "call_iv": 123.2,
+        "call_volume": 300703,
+        "put_volume": 156919,
+        "total_volume": 457622
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
@@ -235,37 +215,16 @@
         "sentiment_score": 70
       },
       "metrics": {
-        "pc_volume_ratio": 0.57,
-        "call_iv": 101.3,
-        "call_volume": 64332,
-        "put_volume": 36396,
-        "total_volume": 100728
+        "pc_volume_ratio": 0.6,
+        "call_iv": 125.2,
+        "call_volume": 67220,
+        "put_volume": 40388,
+        "total_volume": 107608
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
         "unusual_calls": 8,
-        "unusual_puts": 5,
-        "has_unusual": true
-      }
-    },
-    {
-      "ticker": "GOOGL",
-      "current_price": 354.3,
-      "signal": {
-        "sentiment": "Bullish",
-        "sentiment_score": 70
-      },
-      "metrics": {
-        "pc_volume_ratio": 0.5,
-        "call_iv": 61.5,
-        "call_volume": 47425,
-        "put_volume": 23799,
-        "total_volume": 71224
-      },
-      "expiration": "2026-08-10",
-      "unusual_activity": {
-        "unusual_calls": 5,
-        "unusual_puts": 4,
+        "unusual_puts": 6,
         "has_unusual": true
       }
     },
@@ -278,10 +237,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.31,
-        "call_iv": 86.0,
-        "call_volume": 61099,
+        "call_iv": 98.0,
+        "call_volume": 61100,
         "put_volume": 19245,
-        "total_volume": 80344
+        "total_volume": 80345
       },
       "expiration": "2026-08-14",
       "unusual_activity": {
@@ -298,16 +257,37 @@
         "sentiment_score": 70
       },
       "metrics": {
-        "pc_volume_ratio": 0.57,
-        "call_iv": 63.5,
-        "call_volume": 7637,
+        "pc_volume_ratio": 0.55,
+        "call_iv": 66.8,
+        "call_volume": 7920,
         "put_volume": 4342,
-        "total_volume": 11979
+        "total_volume": 12262
       },
       "expiration": "2026-08-14",
       "unusual_activity": {
         "unusual_calls": 4,
         "unusual_puts": 3,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "DIS",
+      "current_price": 104.91,
+      "signal": {
+        "sentiment": "Bullish",
+        "sentiment_score": 70
+      },
+      "metrics": {
+        "pc_volume_ratio": 0.36,
+        "call_iv": 70.0,
+        "call_volume": 5365,
+        "put_volume": 1957,
+        "total_volume": 7322
+      },
+      "expiration": "2026-08-14",
+      "unusual_activity": {
+        "unusual_calls": 4,
+        "unusual_puts": 4,
         "has_unusual": true
       }
     },
@@ -320,10 +300,10 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.45,
-        "call_iv": 43.0,
-        "call_volume": 8656,
+        "call_iv": 45.6,
+        "call_volume": 8671,
         "put_volume": 3873,
-        "total_volume": 12529
+        "total_volume": 12544
       },
       "expiration": "2026-08-14",
       "unusual_activity": {
@@ -333,22 +313,22 @@
       }
     },
     {
-      "ticker": "QQQ",
-      "current_price": 723.03,
+      "ticker": "MSFT",
+      "current_price": 499.99,
       "signal": {
-        "sentiment": "Neutral",
+        "sentiment": "Bullish",
         "sentiment_score": 60
       },
       "metrics": {
-        "pc_volume_ratio": 0.73,
-        "call_iv": 44.7,
-        "call_volume": 321534,
-        "put_volume": 235631,
-        "total_volume": 557165
+        "pc_volume_ratio": 0.53,
+        "call_iv": 97.0,
+        "call_volume": 41343,
+        "put_volume": 21801,
+        "total_volume": 63144
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
-        "unusual_calls": 9,
+        "unusual_calls": 8,
         "unusual_puts": 8,
         "has_unusual": true
       }
@@ -361,37 +341,58 @@
         "sentiment_score": 60
       },
       "metrics": {
-        "pc_volume_ratio": 0.9,
-        "call_iv": 86.1,
-        "call_volume": 34812,
-        "put_volume": 31164,
-        "total_volume": 65976
+        "pc_volume_ratio": 0.89,
+        "call_iv": 124.2,
+        "call_volume": 35193,
+        "put_volume": 31357,
+        "total_volume": 66550
       },
       "expiration": "2026-08-10",
       "unusual_activity": {
-        "unusual_calls": 10,
+        "unusual_calls": 12,
         "unusual_puts": 8,
         "has_unusual": true
       }
     },
     {
-      "ticker": "DIS",
-      "current_price": 104.91,
+      "ticker": "SPY",
+      "current_price": 773.26,
       "signal": {
-        "sentiment": "Bullish",
-        "sentiment_score": 60
+        "sentiment": "Bearish",
+        "sentiment_score": 30
       },
       "metrics": {
-        "pc_volume_ratio": 0.33,
-        "call_iv": 62.8,
-        "call_volume": 5241,
-        "put_volume": 1750,
-        "total_volume": 6991
+        "pc_volume_ratio": 1.13,
+        "call_iv": 34.7,
+        "call_volume": 708794,
+        "put_volume": 798136,
+        "total_volume": 1506930
       },
-      "expiration": "2026-08-14",
+      "expiration": "2026-08-10",
       "unusual_activity": {
-        "unusual_calls": 3,
-        "unusual_puts": 4,
+        "unusual_calls": 12,
+        "unusual_puts": 13,
+        "has_unusual": true
+      }
+    },
+    {
+      "ticker": "QQQ",
+      "current_price": 723.03,
+      "signal": {
+        "sentiment": "Bearish",
+        "sentiment_score": 30
+      },
+      "metrics": {
+        "pc_volume_ratio": 1.12,
+        "call_iv": 56.1,
+        "call_volume": 354267,
+        "put_volume": 395286,
+        "total_volume": 749553
+      },
+      "expiration": "2026-08-10",
+      "unusual_activity": {
+        "unusual_calls": 11,
+        "unusual_puts": 19,
         "has_unusual": true
       }
     },
@@ -403,16 +404,16 @@
         "sentiment_score": 20
       },
       "metrics": {
-        "pc_volume_ratio": 2.68,
-        "call_iv": 57.7,
-        "call_volume": 3219,
-        "put_volume": 8615,
-        "total_volume": 11834
+        "pc_volume_ratio": 2.52,
+        "call_iv": 61.0,
+        "call_volume": 3453,
+        "put_volume": 8697,
+        "total_volume": 12150
       },
       "expiration": "2026-08-14",
       "unusual_activity": {
         "unusual_calls": 8,
-        "unusual_puts": 10,
+        "unusual_puts": 11,
         "has_unusual": true
       }
     }

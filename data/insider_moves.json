@@ -1,16 +1,10 @@
 {
-  "timestamp": "2026-08-08T22:29:00.009391",
+  "timestamp": "2026-08-09T22:32:26.133210",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
-        {
-          "date": "75",
-          "insider": "KONDO CHRISTOPHER",
-          "type": "Sell",
-          "value": 1121037.0
-        },
         {
           "date": "74",
           "insider": "KONDO CHRISTOPHER",
@@ -34,6 +28,12 @@
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 13550148.0
+        },
+        {
+          "date": "65",
+          "insider": "ADAMS KATHERINE L",
+          "type": "Sell",
+          "value": 13802297.0
         }
       ]
     },
