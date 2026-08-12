@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-11T22:38:48.431937",
+  "timestamp": "2026-08-12T10:15:14.612794",
   "candidates": [
     {
       "ticker": "AMZN",
@@ -9,9 +9,44 @@
       "stage": "2 (Uptrend)"
     },
     {
+      "ticker": "META",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "ARM",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "AVGO",
       "price": 416.08,
       "from_52w_high": -13.46,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "PYPL",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "AFRM",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "SOFI",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
@@ -30,5 +65,5 @@
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 9
 }
