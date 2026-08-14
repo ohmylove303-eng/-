@@ -19568,5 +19568,100 @@
       }
     ],
     "saved_at": "2026-08-13T10:17:55.627154"
+  },
+  "2026-08-14": {
+    "recommendations": [
+      {
+        "ticker": "GPN",
+        "name": "Global Payments Inc.",
+        "recommended_price": 86.12,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "ZBRA",
+        "name": "Zebra Technologies Corporation",
+        "recommended_price": 376.49,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "EPAM",
+        "name": "EPAM Systems, Inc.",
+        "recommended_price": 97.43,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "BKNG",
+        "name": "Booking Holdings Inc.",
+        "recommended_price": 214.42,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "NUE",
+        "name": "Nucor Corporation",
+        "recommended_price": 272.63,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "ALLE",
+        "name": "Allegion plc",
+        "recommended_price": 168.94,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "SCHW",
+        "name": "The Charles Schwab Corporation",
+        "recommended_price": 107.6,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "CRM",
+        "name": "Salesforce, Inc.",
+        "recommended_price": 192.74,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "LDOS",
+        "name": "Leidos Holdings, Inc.",
+        "recommended_price": 137.57,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      },
+      {
+        "ticker": "GEN",
+        "name": "Gen Digital Inc.",
+        "recommended_price": 29.17,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-14"
+      }
+    ],
+    "saved_at": "2026-08-14T10:11:34.882259"
   }
 }
