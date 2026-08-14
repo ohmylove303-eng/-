@@ -1,9 +1,10 @@
 {
-  "timestamp": "2026-08-13T22:37:24.698002",
+  "timestamp": "2026-08-14T22:19:07.869436",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
       "SPY",
+      "IWM",
       "DIA",
       "XLF",
       "XLV",
@@ -15,11 +16,12 @@
       "SLV"
     ],
     "inflow": [
+      "QQQ",
       "XLK",
       "XLY",
       "XLP",
       "ARKK",
-      "TLT",
+      "SMH",
       "HYG"
     ],
     "outflow": [
@@ -32,66 +34,66 @@
   },
   "top_inflows": [
     {
-      "ticker": "GLD",
-      "name": "Gold ETF",
-      "flow_score": 85,
-      "price_change_20d": 9.32
-    },
-    {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 7.09
+      "price_change_20d": 7.33
+    },
+    {
+      "ticker": "SOXX",
+      "name": "Semiconductor ETF",
+      "flow_score": 75,
+      "price_change_20d": 5.48
+    },
+    {
+      "ticker": "GLD",
+      "name": "Gold ETF",
+      "flow_score": 75,
+      "price_change_20d": 8.98
     },
     {
       "ticker": "SLV",
       "name": "Silver ETF",
       "flow_score": 75,
-      "price_change_20d": 15.42
+      "price_change_20d": 15.16
     },
     {
       "ticker": "SPY",
       "name": "S&P 500 ETF",
       "flow_score": 70,
-      "price_change_20d": 3.62
-    },
-    {
-      "ticker": "DIA",
-      "name": "Dow Jones ETF",
-      "flow_score": 70,
-      "price_change_20d": 2.52
+      "price_change_20d": 4.45
     }
   ],
   "top_outflows": [
     {
       "ticker": "XLU",
       "name": "Utilities Select",
-      "flow_score": 30,
-      "price_change_20d": -3.14
+      "flow_score": 40,
+      "price_change_20d": -1.9
     },
     {
       "ticker": "XLRE",
       "name": "Real Estate Select",
       "flow_score": 40,
-      "price_change_20d": -0.75
+      "price_change_20d": 1.59
     },
     {
       "ticker": "XLC",
       "name": "Communication Services",
       "flow_score": 40,
-      "price_change_20d": 0.99
+      "price_change_20d": -0.38
     },
     {
       "ticker": "LQD",
       "name": "Investment Grade Corp",
       "flow_score": 40,
-      "price_change_20d": -0.45
+      "price_change_20d": -1.02
     },
     {
-      "ticker": "QQQ",
-      "name": "Nasdaq 100 ETF",
+      "ticker": "USO",
+      "name": "Oil ETF",
       "flow_score": 50,
-      "price_change_20d": 3.7
+      "price_change_20d": 2.13
     }
   ],
   "ai_analysis": "API Error: 400"
