@@ -1,3 +1,94 @@
 {
-  "error": "No data"
+  "timestamp": "2026-08-15T22:21:05.275295",
+  "period": "5d",
+  "sectors": [
+    {
+      "ticker": "XLE",
+      "name": "Energy",
+      "color": "#FF6347",
+      "price": 61.91,
+      "change_1d": 1.39,
+      "change_period": 2.87
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities",
+      "color": "#87CEEB",
+      "price": 44.31,
+      "change_1d": 0.61,
+      "change_period": 2.74
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials",
+      "color": "#F0E68C",
+      "price": 52.54,
+      "change_1d": 0.44,
+      "change_period": -1.2
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrials",
+      "color": "#DDA0DD",
+      "price": 186.51,
+      "change_1d": 0.39,
+      "change_period": 1.03
+    },
+    {
+      "ticker": "XLC",
+      "name": "Comm. Services",
+      "color": "#9370DB",
+      "price": 112.95,
+      "change_1d": 0.36,
+      "change_period": 1.0
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "color": "#CD853F",
+      "price": 45.27,
+      "change_1d": 0.33,
+      "change_period": 1.96
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "color": "#98D8C8",
+      "price": 86.09,
+      "change_1d": 0.1,
+      "change_period": 1.34
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "color": "#6B8E23",
+      "price": 58.16,
+      "change_1d": -0.17,
+      "change_period": 0.61
+    },
+    {
+      "ticker": "XLY",
+      "name": "Consumer Disc.",
+      "color": "#FFD700",
+      "price": 118.2,
+      "change_1d": -0.21,
+      "change_period": -1.23
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technology",
+      "color": "#4A90A4",
+      "price": 190.01,
+      "change_1d": -0.4,
+      "change_period": 1.98
+    },
+    {
+      "ticker": "XLV",
+      "name": "Healthcare",
+      "color": "#FF69B4",
+      "price": 167.37,
+      "change_1d": -0.6,
+      "change_period": -0.64
+    }
+  ]
 }
