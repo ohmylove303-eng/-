@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-15T22:21:17.394137",
+  "timestamp": "2026-08-16T22:22:20.268480",
   "summary": {
     "total_analyzed": 15,
     "bullish_count": 11,
@@ -110,7 +110,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.41,
-        "call_iv": 60.4,
+        "call_iv": 73.7,
         "call_volume": 95387,
         "put_volume": 39110,
         "total_volume": 134497
@@ -131,7 +131,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.46,
-        "call_iv": 96.9,
+        "call_iv": 117.3,
         "call_volume": 367702,
         "put_volume": 168496,
         "total_volume": 536198
@@ -152,7 +152,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.38,
-        "call_iv": 61.7,
+        "call_iv": 74.4,
         "call_volume": 33149,
         "put_volume": 12741,
         "total_volume": 45890
@@ -173,7 +173,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.35,
-        "call_iv": 57.6,
+        "call_iv": 68.4,
         "call_volume": 27186,
         "put_volume": 9514,
         "total_volume": 36700
@@ -194,7 +194,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.55,
-        "call_iv": 91.0,
+        "call_iv": 110.9,
         "call_volume": 212009,
         "put_volume": 116274,
         "total_volume": 328283
@@ -215,7 +215,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.57,
-        "call_iv": 84.8,
+        "call_iv": 90.0,
         "call_volume": 7612,
         "put_volume": 4323,
         "total_volume": 11935
@@ -236,7 +236,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.51,
-        "call_iv": 80.3,
+        "call_iv": 86.7,
         "call_volume": 9584,
         "put_volume": 4879,
         "total_volume": 14463
@@ -257,7 +257,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.41,
-        "call_iv": 50.7,
+        "call_iv": 61.3,
         "call_volume": 38793,
         "put_volume": 15939,
         "total_volume": 54732
@@ -278,7 +278,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.84,
-        "call_iv": 29.9,
+        "call_iv": 36.6,
         "call_volume": 377185,
         "put_volume": 315471,
         "total_volume": 692656
@@ -299,7 +299,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.64,
-        "call_iv": 64.9,
+        "call_iv": 79.1,
         "call_volume": 63565,
         "put_volume": 40958,
         "total_volume": 104523
@@ -320,7 +320,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.55,
-        "call_iv": 82.5,
+        "call_iv": 98.5,
         "call_volume": 55603,
         "put_volume": 30685,
         "total_volume": 86288
@@ -341,7 +341,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.58,
-        "call_iv": 435.4,
+        "call_iv": 470.1,
         "call_volume": 61401,
         "put_volume": 35840,
         "total_volume": 97241
@@ -362,7 +362,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 0.72,
-        "call_iv": 87.0,
+        "call_iv": 93.7,
         "call_volume": 8771,
         "put_volume": 6303,
         "total_volume": 15074
@@ -383,7 +383,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 2.68,
-        "call_iv": 100.3,
+        "call_iv": 108.1,
         "call_volume": 4269,
         "put_volume": 11447,
         "total_volume": 15716
@@ -404,7 +404,7 @@
       },
       "metrics": {
         "pc_volume_ratio": 1.23,
-        "call_iv": 22.1,
+        "call_iv": 27.0,
         "call_volume": 515981,
         "put_volume": 637181,
         "total_volume": 1153162

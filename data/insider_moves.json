@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-15T22:21:19.443801",
+  "timestamp": "2026-08-16T22:22:21.945332",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -222,12 +222,6 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "23",
-          "insider": "HENNESSY JOHN L",
-          "type": "Sell",
-          "value": 115500.0
-        },
-        {
           "date": "22",
           "insider": "HENNESSY JOHN L",
           "type": "Sell",
@@ -250,6 +244,12 @@
           "insider": "SHRIRAM KAVITARK RAM",
           "type": "Sell",
           "value": 3525210.0
+        },
+        {
+          "date": "17",
+          "insider": "SHRIRAM KAVITARK RAM",
+          "type": "Sell",
+          "value": 3459495.0
         }
       ]
     },
