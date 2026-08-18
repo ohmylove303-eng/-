@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-16T22:22:22.980690",
+  "timestamp": "2026-08-18T22:26:03.388833",
   "summary": {
-    "portfolio_volatility": 25.86,
-    "sharpe_ratio": 1.13,
-    "max_drawdown": -20.23,
+    "portfolio_volatility": 25.64,
+    "sharpe_ratio": 1.12,
+    "max_drawdown": -20.03,
     "var_95": -2.41,
     "risk_level": "High"
   },
@@ -22,7 +22,7 @@
           },
           {
             "x": "AMZN",
-            "y": 0.09
+            "y": 0.08
           },
           {
             "x": "GOOGL",
@@ -30,7 +30,7 @@
           },
           {
             "x": "META",
-            "y": 0.17
+            "y": 0.16
           },
           {
             "x": "MSFT",
@@ -63,11 +63,11 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.23
+            "y": 0.22
           },
           {
             "x": "META",
-            "y": 0.17
+            "y": 0.18
           },
           {
             "x": "MSFT",
@@ -88,7 +88,7 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.09
+            "y": 0.08
           },
           {
             "x": "AMD",
@@ -100,7 +100,7 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.51
+            "y": 0.5
           },
           {
             "x": "META",
@@ -112,7 +112,7 @@
           },
           {
             "x": "NVDA",
-            "y": 0.3
+            "y": 0.29
           },
           {
             "x": "TSLA",
@@ -129,11 +129,11 @@
           },
           {
             "x": "AMD",
-            "y": 0.23
+            "y": 0.22
           },
           {
             "x": "AMZN",
-            "y": 0.51
+            "y": 0.5
           },
           {
             "x": "GOOGL",
@@ -141,7 +141,7 @@
           },
           {
             "x": "META",
-            "y": 0.32
+            "y": 0.31
           },
           {
             "x": "MSFT",
@@ -162,11 +162,11 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.17
+            "y": 0.16
           },
           {
             "x": "AMD",
-            "y": 0.17
+            "y": 0.18
           },
           {
             "x": "AMZN",
@@ -174,7 +174,7 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.32
+            "y": 0.31
           },
           {
             "x": "META",
@@ -182,7 +182,7 @@
           },
           {
             "x": "MSFT",
-            "y": 0.16
+            "y": 0.17
           },
           {
             "x": "NVDA",
@@ -215,7 +215,7 @@
           },
           {
             "x": "META",
-            "y": 0.16
+            "y": 0.17
           },
           {
             "x": "MSFT",
@@ -244,7 +244,7 @@
           },
           {
             "x": "AMZN",
-            "y": 0.3
+            "y": 0.29
           },
           {
             "x": "GOOGL",
@@ -311,51 +311,51 @@
   "individual_risks": [
     {
       "ticker": "NVDA",
-      "volatility": 36.88,
+      "volatility": 36.78,
       "max_drawdown": -20.21,
-      "beta": 0.9
+      "beta": 0.91
     },
     {
       "ticker": "MSFT",
-      "volatility": 32.2,
+      "volatility": 32.31,
       "max_drawdown": -34.5,
-      "beta": 0.59
+      "beta": 0.61
     },
     {
       "ticker": "AAPL",
-      "volatility": 25.03,
+      "volatility": 25.06,
       "max_drawdown": -13.8,
-      "beta": 0.28
+      "beta": 0.29
     },
     {
       "ticker": "GOOGL",
-      "volatility": 32.82,
+      "volatility": 32.81,
       "max_drawdown": -21.05,
-      "beta": 0.69
+      "beta": 0.7
     },
     {
       "ticker": "AMZN",
-      "volatility": 34.47,
+      "volatility": 34.45,
       "max_drawdown": -21.74,
-      "beta": 0.81
+      "beta": 0.82
     },
     {
       "ticker": "TSLA",
-      "volatility": 46.48,
+      "volatility": 46.44,
       "max_drawdown": -39.1,
-      "beta": 1.27
+      "beta": 1.28
     },
     {
       "ticker": "AMD",
-      "volatility": 71.76,
+      "volatility": 71.7,
       "max_drawdown": -27.76,
       "beta": 2.08
     },
     {
       "ticker": "META",
-      "volatility": 38.51,
+      "volatility": 38.8,
       "max_drawdown": -32.46,
-      "beta": 0.92
+      "beta": 0.93
     }
   ]
 }
