@@ -20138,5 +20138,100 @@
       }
     ],
     "saved_at": "2026-08-19T09:42:31.278296"
+  },
+  "2026-08-20": {
+    "recommendations": [
+      {
+        "ticker": "CPRT",
+        "name": "Copart, Inc.",
+        "recommended_price": 31.51,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "CRM",
+        "name": "Salesforce, Inc.",
+        "recommended_price": 196.14,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "SCHW",
+        "name": "The Charles Schwab Corporation",
+        "recommended_price": 111.68,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "CPAY",
+        "name": "Corpay, Inc.",
+        "recommended_price": 406.82,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "INTU",
+        "name": "Intuit Inc.",
+        "recommended_price": 350.41,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "DRI",
+        "name": "Darden Restaurants, Inc.",
+        "recommended_price": 218.86,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "JNJ",
+        "name": "Johnson & Johnson",
+        "recommended_price": 271.11,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "NEM",
+        "name": "Newmont Corporation",
+        "recommended_price": 115.98,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "AVY",
+        "name": "Avery Dennison Corporation",
+        "recommended_price": 177.71,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      },
+      {
+        "ticker": "EXPE",
+        "name": "Expedia Group, Inc.",
+        "recommended_price": 321.42,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-08-20"
+      }
+    ],
+    "saved_at": "2026-08-20T09:44:59.008137"
   }
 }
