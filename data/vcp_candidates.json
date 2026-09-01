@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-01T01:02:21.415175",
+  "timestamp": "2026-09-01T14:08:25.965552",
   "candidates": [
     {
       "ticker": "VRTX",
-      "price": 544.52,
-      "from_52w_high": -1.51,
+      "price": 549.07,
+      "from_52w_high": -0.68,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
