@@ -1,31 +1,30 @@
 {
-  "timestamp": "2026-09-01T23:49:26.323087",
+  "timestamp": "2026-09-02T23:47:12.789590",
   "etf_count": 24,
   "summary": {
     "strong_inflow": [
       "XLV",
       "XLE",
-      "XLB",
       "ARKK",
       "GLD",
       "SLV",
       "USO"
     ],
     "inflow": [
-      "TLT"
+      "XLP",
+      "XLB",
+      "XLC"
     ],
     "outflow": [
       "SPY",
       "QQQ",
-      "IWM",
       "DIA",
+      "XLK",
       "XLF",
       "XLY",
-      "XLP",
-      "XLU",
       "XLRE",
-      "XLC",
       "SMH",
+      "TLT",
       "HYG",
       "LQD"
     ],
@@ -38,31 +37,31 @@
       "ticker": "XLV",
       "name": "Healthcare Select",
       "flow_score": 75,
-      "price_change_20d": 5.9
+      "price_change_20d": 5.35
     },
     {
       "ticker": "XLE",
       "name": "Energy Select",
       "flow_score": 75,
-      "price_change_20d": 10.68
+      "price_change_20d": 13.59
     },
     {
       "ticker": "ARKK",
       "name": "ARK Innovation",
       "flow_score": 75,
-      "price_change_20d": 12.97
-    },
-    {
-      "ticker": "GLD",
-      "name": "Gold ETF",
-      "flow_score": 75,
-      "price_change_20d": 6.04
+      "price_change_20d": 8.64
     },
     {
       "ticker": "SLV",
       "name": "Silver ETF",
       "flow_score": 75,
-      "price_change_20d": 7.58
+      "price_change_20d": 5.35
+    },
+    {
+      "ticker": "USO",
+      "name": "Oil ETF",
+      "flow_score": 75,
+      "price_change_20d": 22.87
     }
   ],
   "top_outflows": [
@@ -70,31 +69,31 @@
       "ticker": "XLI",
       "name": "Industrial Select",
       "flow_score": 25,
-      "price_change_20d": -7.33
-    },
-    {
-      "ticker": "QQQ",
-      "name": "Nasdaq 100 ETF",
-      "flow_score": 30,
-      "price_change_20d": -2.24
-    },
-    {
-      "ticker": "DIA",
-      "name": "Dow Jones ETF",
-      "flow_score": 30,
-      "price_change_20d": -2.27
+      "price_change_20d": -7.31
     },
     {
       "ticker": "XLY",
       "name": "Consumer Discretionary",
       "flow_score": 30,
-      "price_change_20d": -3.06
+      "price_change_20d": -2.9
     },
     {
-      "ticker": "XLU",
-      "name": "Utilities Select",
+      "ticker": "XLRE",
+      "name": "Real Estate Select",
       "flow_score": 30,
-      "price_change_20d": -4.06
+      "price_change_20d": -3.25
+    },
+    {
+      "ticker": "SMH",
+      "name": "VanEck Semiconductor",
+      "flow_score": 30,
+      "price_change_20d": -4.38
+    },
+    {
+      "ticker": "SPY",
+      "name": "S&P 500 ETF",
+      "flow_score": 40,
+      "price_change_20d": -0.6
     }
   ],
   "ai_analysis": "API Error: 400"
