@@ -1,5 +1,27 @@
 {
-  "timestamp": "2026-09-09T23:48:11.889610",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-09-10T13:32:56.858989",
+  "candidates": [
+    {
+      "ticker": "NVDA",
+      "price": 219.18,
+      "from_52w_high": -6.91,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "CRWD",
+      "price": 204.87,
+      "from_52w_high": -11.31,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "VRTX",
+      "price": 517.57,
+      "from_52w_high": -7.24,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 3
 }
