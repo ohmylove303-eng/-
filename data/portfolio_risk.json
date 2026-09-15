@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-09-11T23:48:34.793729",
+  "timestamp": "2026-09-15T00:17:05.367018",
   "summary": {
-    "portfolio_volatility": 25.63,
-    "sharpe_ratio": 1.19,
+    "portfolio_volatility": 25.58,
+    "sharpe_ratio": 1.12,
     "max_drawdown": -20.34,
     "var_95": -2.42,
     "risk_level": "High"
@@ -26,7 +26,7 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.15
+            "y": 0.14
           },
           {
             "x": "META",
@@ -125,7 +125,7 @@
         "data": [
           {
             "x": "AAPL",
-            "y": 0.15
+            "y": 0.14
           },
           {
             "x": "AMD",
@@ -153,7 +153,7 @@
           },
           {
             "x": "TSLA",
-            "y": 0.4
+            "y": 0.39
           }
         ]
       },
@@ -285,7 +285,7 @@
           },
           {
             "x": "GOOGL",
-            "y": 0.4
+            "y": 0.39
           },
           {
             "x": "META",
@@ -317,31 +317,31 @@
     },
     {
       "ticker": "MSFT",
-      "volatility": 32.5,
+      "volatility": 32.48,
       "max_drawdown": -34.5,
       "beta": 0.6
     },
     {
       "ticker": "AAPL",
-      "volatility": 25.08,
+      "volatility": 25.06,
       "max_drawdown": -13.8,
       "beta": 0.26
     },
     {
       "ticker": "GOOGL",
-      "volatility": 31.65,
+      "volatility": 31.34,
       "max_drawdown": -21.05,
-      "beta": 0.67
+      "beta": 0.66
     },
     {
       "ticker": "AMZN",
-      "volatility": 34.4,
+      "volatility": 34.37,
       "max_drawdown": -21.74,
       "beta": 0.79
     },
     {
       "ticker": "TSLA",
-      "volatility": 46.69,
+      "volatility": 46.55,
       "max_drawdown": -39.1,
       "beta": 1.28
     },
@@ -349,11 +349,11 @@
       "ticker": "AMD",
       "volatility": 71.95,
       "max_drawdown": -27.76,
-      "beta": 2.06
+      "beta": 2.07
     },
     {
       "ticker": "META",
-      "volatility": 39.54,
+      "volatility": 39.52,
       "max_drawdown": -32.46,
       "beta": 0.97
     }
