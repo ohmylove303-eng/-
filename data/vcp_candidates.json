@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-24T00:14:04.853087",
+  "timestamp": "2026-09-24T14:12:40.605483",
   "candidates": [
     {
-      "ticker": "PLTR",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "SNOW",
+      "price": 334.15,
+      "from_52w_high": -6.26,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
