@@ -1,34 +1,41 @@
 {
-  "timestamp": "2026-09-25T14:36:31.722366",
+  "timestamp": "2026-09-26T00:22:41.717164",
   "candidates": [
     {
-      "ticker": "NVDA",
-      "price": 223.85,
-      "from_52w_high": -4.83,
+      "ticker": "AAPL",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "AAPL",
-      "price": 336.87,
-      "from_52w_high": -0.86,
+      "ticker": "PLTR",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "CRM",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SNOW",
-      "price": 340.82,
-      "from_52w_high": -4.39,
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "VRTX",
-      "price": 521.14,
-      "from_52w_high": -6.6,
+      "ticker": "ISRG",
+      "price": NaN,
+      "from_52w_high": NaN,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 4
+  "count": 5
 }
