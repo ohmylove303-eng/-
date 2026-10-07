@@ -1,76 +1,69 @@
 {
-  "timestamp": "2026-10-07T01:18:51.102596",
+  "timestamp": "2026-10-07T16:17:47.163384",
   "candidates": [
     {
-      "ticker": "META",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "AMD",
+      "price": 642.5,
+      "from_52w_high": -1.07,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "PLTR",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "AAPL",
+      "price": 334.84,
+      "from_52w_high": -1.83,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
-      "ticker": "ARM",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "AMZN",
+      "price": 258.98,
+      "from_52w_high": -8.82,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "SMCI",
+      "price": 44.15,
+      "from_52w_high": -24.75,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "NET",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 347.9,
+      "from_52w_high": -3.22,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "CRWD",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 267.93,
+      "from_52w_high": -3.92,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "PANW",
+      "price": 406.67,
+      "from_52w_high": -3.15,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "SNOW",
+      "price": 337.07,
+      "from_52w_high": -5.44,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "DDOG",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "TTD",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SHOP",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "AFRM",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "MARA",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 275.2,
+      "from_52w_high": -4.49,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 10
+  "count": 9
 }
