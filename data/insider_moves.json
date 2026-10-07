@@ -1,39 +1,39 @@
 {
-  "timestamp": "2026-10-06T02:07:37.033276",
+  "timestamp": "2026-10-07T01:18:16.501281",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
         {
-          "date": "70",
+          "date": "77",
           "insider": "KONDO CHRISTOPHER",
           "type": "Sell",
           "value": 945233.0
         },
         {
-          "date": "69",
+          "date": "76",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 45464500.0
         },
         {
-          "date": "68",
+          "date": "75",
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 24997395.0
         },
         {
-          "date": "60",
+          "date": "67",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 343147.0
         },
         {
-          "date": "55",
-          "insider": "WILLIAMS JEFFREY E",
+          "date": "62",
+          "insider": "COOK TIMOTHY D",
           "type": "Sell",
-          "value": 7950691.0
+          "value": 24184658.0
         }
       ]
     },
@@ -60,13 +60,13 @@
           "value": 2368377.0
         },
         {
-          "date": "137",
+          "date": "138",
           "insider": "KRESS COLETTE M.",
           "type": "Sell",
           "value": 7787993.0
         },
         {
-          "date": "136",
+          "date": "137",
           "insider": "ROBERTSON DONALD F JR",
           "type": "Sell",
           "value": 525585.0
@@ -151,33 +151,33 @@
       "transactions": [
         {
           "date": "149",
-          "insider": "REYNOLDS SHELLEY L",
-          "type": "Sell",
-          "value": 1965107.0
-        },
-        {
-          "date": "148",
           "insider": "JASSY ANDREW R.",
           "type": "Sell",
           "value": 4586006.0
         },
         {
-          "date": "147",
-          "insider": "OLSAVSKY BRIAN T.",
+          "date": "148",
+          "insider": "GARMAN MATTHEW S",
           "type": "Sell",
-          "value": 3262307.0
+          "value": 3363292.0
         },
         {
-          "date": "146",
+          "date": "147",
           "insider": "HERRINGTON DOUGLAS J",
           "type": "Sell",
           "value": 1357967.0
         },
         {
-          "date": "145",
-          "insider": "GARMAN MATTHEW S",
+          "date": "146",
+          "insider": "OLSAVSKY BRIAN T.",
           "type": "Sell",
-          "value": 3363292.0
+          "value": 3262307.0
+        },
+        {
+          "date": "145",
+          "insider": "ZAPOLSKY DAVID A.",
+          "type": "Sell",
+          "value": 5469364.0
         }
       ]
     },
