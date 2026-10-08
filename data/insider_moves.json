@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-10-07T01:18:16.501281",
+  "timestamp": "2026-10-08T01:37:07.283557",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
         {
-          "date": "77",
+          "date": "78",
           "insider": "KONDO CHRISTOPHER",
           "type": "Sell",
           "value": 945233.0
         },
         {
-          "date": "76",
+          "date": "77",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 45464500.0
         },
         {
-          "date": "75",
+          "date": "76",
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 24997395.0
         },
         {
-          "date": "67",
+          "date": "68",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 343147.0
         },
         {
-          "date": "62",
+          "date": "63",
           "insider": "COOK TIMOTHY D",
           "type": "Sell",
           "value": 24184658.0
@@ -42,7 +42,7 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "146",
+          "date": "141",
           "insider": "DABIRI JOHN O",
           "type": "Sell",
           "value": 292930.0
@@ -60,13 +60,13 @@
           "value": 2368377.0
         },
         {
-          "date": "138",
+          "date": "137",
           "insider": "KRESS COLETTE M.",
           "type": "Sell",
           "value": 7787993.0
         },
         {
-          "date": "137",
+          "date": "136",
           "insider": "ROBERTSON DONALD F JR",
           "type": "Sell",
           "value": 525585.0
@@ -85,24 +85,24 @@
         },
         {
           "date": "90",
-          "insider": "MUSK KIMBAL J",
-          "type": "Sell",
-          "value": 15138945.0
-        },
-        {
-          "date": "89",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 1007040.0
         },
         {
-          "date": "87",
+          "date": "88",
+          "insider": "MUSK KIMBAL J",
+          "type": "Sell",
+          "value": 15138945.0
+        },
+        {
+          "date": "86",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 3802956.0
         },
         {
-          "date": "85",
+          "date": "84",
           "insider": "WILSON - THOMPSON KATHLEEN",
           "type": "Sell",
           "value": 34602454.0
@@ -157,15 +157,15 @@
         },
         {
           "date": "148",
-          "insider": "GARMAN MATTHEW S",
-          "type": "Sell",
-          "value": 3363292.0
-        },
-        {
-          "date": "147",
           "insider": "HERRINGTON DOUGLAS J",
           "type": "Sell",
           "value": 1357967.0
+        },
+        {
+          "date": "147",
+          "insider": "GARMAN MATTHEW S",
+          "type": "Sell",
+          "value": 3363292.0
         },
         {
           "date": "146",
@@ -307,15 +307,15 @@
         },
         {
           "date": "68",
-          "insider": "COLEMAN DENIS P.",
-          "type": "Sell",
-          "value": 7667285.0
-        },
-        {
-          "date": "67",
           "insider": "FREDMAN SHEARA J.",
           "type": "Sell",
           "value": 1768073.0
+        },
+        {
+          "date": "67",
+          "insider": "COLEMAN DENIS P.",
+          "type": "Sell",
+          "value": 7667285.0
         },
         {
           "date": "65",
@@ -329,12 +329,6 @@
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
-        {
-          "date": "124",
-          "insider": "BERKSHIRE HATHAWAY INC",
-          "type": "Sell",
-          "value": 383039161.0
-        },
         {
           "date": "123",
           "insider": "BERKSHIRE HATHAWAY INC",
@@ -358,6 +352,12 @@
           "insider": "BORTHWICK ALASTAIR M.",
           "type": "Sell",
           "value": 3416320.0
+        },
+        {
+          "date": "17",
+          "insider": "ATHANASIA DEAN C",
+          "type": "Sell",
+          "value": 6856168.0
         }
       ]
     }
