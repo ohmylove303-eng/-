@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-08T01:37:07.283557",
+  "timestamp": "2026-10-09T01:45:30.979589",
   "details": {
     "AAPL": {
       "buy_count": 0,
@@ -151,9 +151,9 @@
       "transactions": [
         {
           "date": "149",
-          "insider": "JASSY ANDREW R.",
+          "insider": "OLSAVSKY BRIAN T.",
           "type": "Sell",
-          "value": 4586006.0
+          "value": 3262307.0
         },
         {
           "date": "148",
@@ -168,16 +168,16 @@
           "value": 3363292.0
         },
         {
-          "date": "146",
-          "insider": "OLSAVSKY BRIAN T.",
-          "type": "Sell",
-          "value": 3262307.0
-        },
-        {
           "date": "145",
           "insider": "ZAPOLSKY DAVID A.",
           "type": "Sell",
           "value": 5469364.0
+        },
+        {
+          "date": "144",
+          "insider": "HERRINGTON DOUGLAS J",
+          "type": "Sell",
+          "value": 532925.0
         }
       ]
     },
@@ -186,34 +186,34 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "149",
-          "insider": "ALFORD PEGGY",
-          "type": "Sell",
-          "value": 405314.0
-        },
-        {
-          "date": "147",
+          "date": "148",
           "insider": "OLIVAN JAVIER",
           "type": "Sell",
           "value": 339152.0
         },
         {
-          "date": "146",
+          "date": "147",
           "insider": "NEWSTEAD JENNIFER",
           "type": "Sell",
           "value": 325932.0
         },
         {
-          "date": "145",
+          "date": "146",
           "insider": "OLIVAN JAVIER",
           "type": "Sell",
           "value": 326227.0
         },
         {
-          "date": "144",
+          "date": "145",
           "insider": "NEWSTEAD JENNIFER",
           "type": "Sell",
           "value": 325596.0
+        },
+        {
+          "date": "130",
+          "insider": "LI SUSAN J.",
+          "type": "Sell",
+          "value": 4190038.0
         }
       ]
     },
@@ -307,15 +307,15 @@
         },
         {
           "date": "68",
-          "insider": "FREDMAN SHEARA J.",
-          "type": "Sell",
-          "value": 1768073.0
-        },
-        {
-          "date": "67",
           "insider": "COLEMAN DENIS P.",
           "type": "Sell",
           "value": 7667285.0
+        },
+        {
+          "date": "67",
+          "insider": "FREDMAN SHEARA J.",
+          "type": "Sell",
+          "value": 1768073.0
         },
         {
           "date": "65",
