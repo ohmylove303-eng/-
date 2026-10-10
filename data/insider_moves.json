@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-10-09T01:45:30.979589",
+  "timestamp": "2026-10-10T01:35:08.705947",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
         {
-          "date": "78",
+          "date": "79",
           "insider": "KONDO CHRISTOPHER",
           "type": "Sell",
           "value": 945233.0
         },
         {
-          "date": "77",
+          "date": "78",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 45464500.0
         },
         {
-          "date": "76",
+          "date": "77",
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 24997395.0
         },
         {
-          "date": "68",
+          "date": "69",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 343147.0
         },
         {
-          "date": "63",
+          "date": "64",
           "insider": "COOK TIMOTHY D",
           "type": "Sell",
           "value": 24184658.0
@@ -327,14 +327,8 @@
     },
     "BAC": {
       "buy_count": 0,
-      "sell_count": 10,
+      "sell_count": 9,
       "transactions": [
-        {
-          "date": "123",
-          "insider": "BERKSHIRE HATHAWAY INC",
-          "type": "Sell",
-          "value": 382403036.0
-        },
         {
           "date": "122",
           "insider": "BERKSHIRE HATHAWAY INC",
@@ -358,6 +352,12 @@
           "insider": "ATHANASIA DEAN C",
           "type": "Sell",
           "value": 6856168.0
+        },
+        {
+          "date": "16",
+          "insider": "DEMARE JAMES P.",
+          "type": "Sell",
+          "value": 4191600.0
         }
       ]
     }
