@@ -24983,5 +24983,100 @@
       }
     ],
     "saved_at": "2026-10-09T16:03:43.413101"
+  },
+  "2026-10-10": {
+    "recommendations": [
+      {
+        "ticker": "TER",
+        "name": "Teradyne, Inc.",
+        "recommended_price": 402.68,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "VRSN",
+        "name": "VeriSign, Inc.",
+        "recommended_price": 303.74,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "VST",
+        "name": "Vistra Corp.",
+        "recommended_price": 161.48,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "TXN",
+        "name": "Texas Instruments Incorporated",
+        "recommended_price": 283.74,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "IDXX",
+        "name": "IDEXX Laboratories, Inc.",
+        "recommended_price": 518.0,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "XOM",
+        "name": "ExxonMobil Holdings Corporation",
+        "recommended_price": 168.94,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "PTC",
+        "name": "PTC Inc.",
+        "recommended_price": 194.45,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "COF",
+        "name": "Capital One Financial Corporation",
+        "recommended_price": 199.26,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "BALL",
+        "name": "Ball Corporation",
+        "recommended_price": 58.46,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      },
+      {
+        "ticker": "WAT",
+        "name": "Waters Corporation",
+        "recommended_price": 433.77,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-10"
+      }
+    ],
+    "saved_at": "2026-10-10T15:10:58.892200"
   }
 }
