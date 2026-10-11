@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-10-10T01:35:08.705947",
+  "timestamp": "2026-10-11T00:44:51.159299",
   "details": {
     "AAPL": {
       "buy_count": 0,
       "sell_count": 10,
       "transactions": [
         {
-          "date": "79",
+          "date": "78",
           "insider": "KONDO CHRISTOPHER",
           "type": "Sell",
           "value": 945233.0
         },
         {
-          "date": "78",
+          "date": "77",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 45464500.0
         },
         {
-          "date": "77",
+          "date": "76",
           "insider": "WILLIAMS JEFFREY E",
           "type": "Sell",
           "value": 24997395.0
         },
         {
-          "date": "69",
+          "date": "68",
           "insider": "LEVINSON ARTHUR D",
           "type": "Sell",
           "value": 343147.0
         },
         {
-          "date": "64",
+          "date": "63",
           "insider": "COOK TIMOTHY D",
           "type": "Sell",
           "value": 24184658.0
@@ -78,34 +78,34 @@
       "sell_count": 10,
       "transactions": [
         {
-          "date": "93",
+          "date": "92",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
           "value": 1000000.0
         },
         {
           "date": "90",
-          "insider": "TANEJA VAIBHAV",
-          "type": "Sell",
-          "value": 1007040.0
-        },
-        {
-          "date": "88",
           "insider": "MUSK KIMBAL J",
           "type": "Sell",
           "value": 15138945.0
         },
         {
-          "date": "86",
+          "date": "88",
           "insider": "TANEJA VAIBHAV",
           "type": "Sell",
-          "value": 3802956.0
+          "value": 1007040.0
         },
         {
-          "date": "84",
+          "date": "86",
           "insider": "WILSON - THOMPSON KATHLEEN",
           "type": "Sell",
           "value": 34602454.0
+        },
+        {
+          "date": "84",
+          "insider": "TANEJA VAIBHAV",
+          "type": "Sell",
+          "value": 3802956.0
         }
       ]
     },
@@ -186,6 +186,12 @@
       "sell_count": 10,
       "transactions": [
         {
+          "date": "149",
+          "insider": "ALFORD PEGGY",
+          "type": "Sell",
+          "value": 405314.0
+        },
+        {
           "date": "148",
           "insider": "OLIVAN JAVIER",
           "type": "Sell",
@@ -208,12 +214,6 @@
           "insider": "NEWSTEAD JENNIFER",
           "type": "Sell",
           "value": 325596.0
-        },
-        {
-          "date": "130",
-          "insider": "LI SUSAN J.",
-          "type": "Sell",
-          "value": 4190038.0
         }
       ]
     },
@@ -327,8 +327,14 @@
     },
     "BAC": {
       "buy_count": 0,
-      "sell_count": 9,
+      "sell_count": 10,
       "transactions": [
+        {
+          "date": "123",
+          "insider": "BERKSHIRE HATHAWAY INC",
+          "type": "Sell",
+          "value": 382403036.0
+        },
         {
           "date": "122",
           "insider": "BERKSHIRE HATHAWAY INC",
@@ -352,12 +358,6 @@
           "insider": "ATHANASIA DEAN C",
           "type": "Sell",
           "value": 6856168.0
-        },
-        {
-          "date": "16",
-          "insider": "DEMARE JAMES P.",
-          "type": "Sell",
-          "value": 4191600.0
         }
       ]
     }
