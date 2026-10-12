@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-11T00:45:17.838166",
+  "timestamp": "2026-10-12T01:01:35.904472",
   "top_picks": [
     {
       "ticker": "VRSN",
@@ -29,7 +29,7 @@
       "sector": "Technology",
       "avg_vol_m": 1150.4,
       "liq_score": 70,
-      "gap_velocity": 0.63,
+      "gap_velocity": 0.64,
       "target_upside": 10.9,
       "rank": 2
     },
@@ -94,7 +94,7 @@
       "avg_vol_m": 1239.3,
       "liq_score": 70,
       "gap_velocity": 0.6,
-      "target_upside": 12.6,
+      "target_upside": 12.8,
       "rank": 6
     },
     {
@@ -109,7 +109,7 @@
       "sector": "Technology",
       "avg_vol_m": 1802.1,
       "liq_score": 70,
-      "gap_velocity": 0.63,
+      "gap_velocity": 0.64,
       "target_upside": 14.4,
       "rank": 7
     },
@@ -158,7 +158,7 @@
       "avg_vol_m": 1315.4,
       "liq_score": 70,
       "gap_velocity": 1.1,
-      "target_upside": -12.4,
+      "target_upside": -10.4,
       "rank": 10
     }
   ]
