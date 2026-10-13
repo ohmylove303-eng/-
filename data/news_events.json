@@ -1,26 +1,5 @@
 {
-  "timestamp": "2026-10-12T18:52:26.060472",
-  "earnings": [
-    {
-      "ticker": "TSLA",
-      "date": "2026-10-21",
-      "days_left": 9
-    },
-    {
-      "ticker": "MSFT",
-      "date": "2026-10-28",
-      "days_left": 16
-    },
-    {
-      "ticker": "AAPL",
-      "date": "2026-11-02",
-      "days_left": 21
-    },
-    {
-      "ticker": "NVDA",
-      "date": "2026-11-17",
-      "days_left": 36
-    }
-  ],
+  "timestamp": "2026-10-13T02:54:09.334582",
+  "earnings": [],
   "news": []
 }
