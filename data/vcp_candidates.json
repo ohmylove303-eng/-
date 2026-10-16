@@ -1,5 +1,20 @@
 {
-  "timestamp": "2026-10-15T14:08:04.116201",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-10-16T00:11:47.988684",
+  "candidates": [
+    {
+      "ticker": "MSTR",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
+      "ticker": "CRM",
+      "price": NaN,
+      "from_52w_high": NaN,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 2
 }
