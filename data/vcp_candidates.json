@@ -1,20 +1,13 @@
 {
-  "timestamp": "2026-10-16T00:11:47.988684",
+  "timestamp": "2026-10-16T13:57:28.063580",
   "candidates": [
     {
-      "ticker": "MSTR",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "CRM",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "ticker": "CRWD",
+      "price": 234.01,
+      "from_52w_high": -16.08,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 2
+  "count": 1
 }
