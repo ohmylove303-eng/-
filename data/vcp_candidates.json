@@ -1,13 +1,5 @@
 {
-  "timestamp": "2026-10-22T00:30:59.089908",
-  "candidates": [
-    {
-      "ticker": "DE",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 1
+  "timestamp": "2026-10-22T14:33:17.447609",
+  "candidates": [],
+  "count": 0
 }
