@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-10-25T23:53:00.291112",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-10-26T16:06:45.626250",
+  "candidates": [
+    {
+      "ticker": "SNOW",
+      "price": 332.65,
+      "from_52w_high": -9.82,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
