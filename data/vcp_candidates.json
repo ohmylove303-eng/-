@@ -1,55 +1,27 @@
 {
-  "timestamp": "2026-10-29T01:31:42.045389",
+  "timestamp": "2026-10-29T16:04:48.188364",
   "candidates": [
     {
+      "ticker": "AMD",
+      "price": 572.41,
+      "from_52w_high": -11.86,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    },
+    {
       "ticker": "PLTR",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "COIN",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "MSTR",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SNOW",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 194.96,
+      "from_52w_high": -6.74,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     },
     {
       "ticker": "SHOP",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "NVO",
-      "price": NaN,
-      "from_52w_high": NaN,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "DE",
-      "price": NaN,
-      "from_52w_high": NaN,
+      "price": 166.81,
+      "from_52w_high": -6.92,
       "pattern": "VCP (Tightening)",
       "stage": "2 (Uptrend)"
     }
   ],
-  "count": 7
+  "count": 3
 }
