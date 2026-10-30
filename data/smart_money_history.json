@@ -26883,5 +26883,100 @@
       }
     ],
     "saved_at": "2026-10-29T16:04:48.328932"
+  },
+  "2026-10-30": {
+    "recommendations": [
+      {
+        "ticker": "CCL",
+        "name": "Carnival Corporation Ltd.",
+        "recommended_price": 26.11,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "HAS",
+        "name": "Hasbro, Inc.",
+        "recommended_price": 117.44,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "COP",
+        "name": "ConocoPhillips",
+        "recommended_price": 150.8,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "ALLE",
+        "name": "Allegion plc",
+        "recommended_price": 178.98,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "CME",
+        "name": "CME Group Inc.",
+        "recommended_price": 305.71,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy Corporation",
+        "recommended_price": 51.39,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "EOG",
+        "name": "EOG Resources, Inc.",
+        "recommended_price": 163.03,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "AMT",
+        "name": "American Tower Corporation",
+        "recommended_price": 188.97,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "CI",
+        "name": "The Cigna Group",
+        "recommended_price": 306.95,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      },
+      {
+        "ticker": "ELV",
+        "name": "Elevance Health, Inc.",
+        "recommended_price": 439.95,
+        "target_price": 0,
+        "ai_score": 0,
+        "recommendation": "Hold",
+        "date": "2026-10-30"
+      }
+    ],
+    "saved_at": "2026-10-30T15:47:26.752419"
   }
 }

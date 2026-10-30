@@ -1,20 +1,5 @@
 {
-  "timestamp": "2026-10-30T01:34:11.154902",
-  "candidates": [
-    {
-      "ticker": "PLTR",
-      "price": 196.42,
-      "from_52w_high": -6.04,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    },
-    {
-      "ticker": "SHOP",
-      "price": 166.89,
-      "from_52w_high": -6.88,
-      "pattern": "VCP (Tightening)",
-      "stage": "2 (Uptrend)"
-    }
-  ],
-  "count": 2
+  "timestamp": "2026-10-30T15:47:26.554345",
+  "candidates": [],
+  "count": 0
 }
