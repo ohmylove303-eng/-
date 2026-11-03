@@ -1,5 +1,13 @@
 {
-  "timestamp": "2026-11-02T19:24:17.597406",
-  "candidates": [],
-  "count": 0
+  "timestamp": "2026-11-03T17:00:33.864943",
+  "candidates": [
+    {
+      "ticker": "CRWD",
+      "price": 247.05,
+      "from_52w_high": -11.41,
+      "pattern": "VCP (Tightening)",
+      "stage": "2 (Uptrend)"
+    }
+  ],
+  "count": 1
 }
